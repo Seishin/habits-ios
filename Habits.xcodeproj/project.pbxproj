@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9817DB741B0E24C000716BE5 /* UserUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9817DB731B0E24C000716BE5 /* UserUtils.swift */; };
 		983C8FB21AFD17F1004A1435 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983C8FB11AFD17F1004A1435 /* AppDelegate.swift */; };
-		983C8FB41AFD17F1004A1435 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983C8FB31AFD17F1004A1435 /* ViewController.swift */; };
+		983C8FB41AFD17F1004A1435 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983C8FB31AFD17F1004A1435 /* HomeViewController.swift */; };
 		983C8FB71AFD17F1004A1435 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 983C8FB51AFD17F1004A1435 /* Main.storyboard */; };
 		983C8FB91AFD17F1004A1435 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 983C8FB81AFD17F1004A1435 /* Images.xcassets */; };
 		983C8FBC1AFD17F1004A1435 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 983C8FBA1AFD17F1004A1435 /* LaunchScreen.xib */; };
@@ -32,10 +33,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9817DB731B0E24C000716BE5 /* UserUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserUtils.swift; sourceTree = "<group>"; };
 		983C8FAC1AFD17F1004A1435 /* Habits.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Habits.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		983C8FB01AFD17F1004A1435 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		983C8FB11AFD17F1004A1435 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		983C8FB31AFD17F1004A1435 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		983C8FB31AFD17F1004A1435 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		983C8FB61AFD17F1004A1435 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		983C8FB81AFD17F1004A1435 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		983C8FBB1AFD17F1004A1435 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -89,6 +91,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		9817DB751B0E301D00716BE5 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				983C8FB31AFD17F1004A1435 /* HomeViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
 		983C8FA31AFD17F1004A1435 = {
 			isa = PBXGroup;
 			children = (
@@ -114,8 +124,8 @@
 			children = (
 				9896D82C1B0C66A2007F2316 /* API */,
 				9896D8361B0C68A2007F2316 /* Utils */,
+				9817DB751B0E301D00716BE5 /* Controllers */,
 				983C8FB11AFD17F1004A1435 /* AppDelegate.swift */,
-				983C8FB31AFD17F1004A1435 /* ViewController.swift */,
 				983C8FB51AFD17F1004A1435 /* Main.storyboard */,
 				983C8FB81AFD17F1004A1435 /* Images.xcassets */,
 				983C8FBA1AFD17F1004A1435 /* LaunchScreen.xib */,
@@ -173,6 +183,7 @@
 			isa = PBXGroup;
 			children = (
 				9896D8341B0C689D007F2316 /* Constants.swift */,
+				9817DB731B0E24C000716BE5 /* UserUtils.swift */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -315,8 +326,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9817DB741B0E24C000716BE5 /* UserUtils.swift in Sources */,
 				9896D8311B0C6715007F2316 /* User.swift in Sources */,
-				983C8FB41AFD17F1004A1435 /* ViewController.swift in Sources */,
+				983C8FB41AFD17F1004A1435 /* HomeViewController.swift in Sources */,
 				983C8FB21AFD17F1004A1435 /* AppDelegate.swift in Sources */,
 				9896D82E1B0C66B0007F2316 /* ApiClient.swift in Sources */,
 				9896D8351B0C689D007F2316 /* Constants.swift in Sources */,

@@ -24,10 +24,10 @@
             </objects>
             <point key="canvasLocation" x="115" y="748"/>
         </scene>
-        <!--Item 1-->
+        <!--Home-->
         <scene sceneID="ZeR-aP-Wvi">
             <objects>
-                <viewController id="vhh-Wi-VA7" customClass="ViewController" customModule="Habits" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Home" id="vhh-Wi-VA7" customClass="HomeViewController" customModule="Habits" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="bbo-wI-cPU"/>
                         <viewControllerLayoutGuide type="bottom" id="Roh-Vg-hCP"/>
