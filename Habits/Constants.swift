@@ -8,7 +8,8 @@
 
 // Urls
 let baseUrl = "http://habits-app.herokuapp.com"
-let createUserUrl = baseUrl + "/users"
+let userUrl = baseUrl + "/users"
+let loginUserUrl = userUrl + "/login"
 
 // UserDefaults Keys
 let kUserId: String = "userId"
@@ -18,4 +19,5 @@ let kUserToken: String = "token"
 
 // Notification Keys
 let notifUserCreationSuccess = "notif_user_creation_success"
-let notifUserCreationFail = "notif_user_creation_fail"
+let notifUserLoginSuccess = "notif_user_login_success"
+let notifFailure = "notif_failure"

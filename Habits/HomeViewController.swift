@@ -16,16 +16,26 @@ class HomeViewController: UIViewController {
         setupNotifications()
         
         var user: User = User()
-        user.email = "test15@test.com"
+        user.email = "test17@test.com"
         user.password = "123456"
         user.name = "test"
         
-        UserUtils.createUserProfile(user)
+//        ApiClient.getUsersApi().createUser(user)
+//        ApiClient.getUsersApi().loginUser(user)
+        
+//        println(UserUtils.getUserProfile())
+        
+        ApiClient.getUsersApi().getUserById("555ed5f92fe0280300a9d1b0", onComplete: { (user) -> Void in
+            println(user)
+        })
+
+        
     }
     
     func setupNotifications() {
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "userCreationSuccess:", name: notifUserCreationSuccess, object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "userCreationFail:", name: notifUserCreationFail, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "onUserCreationSuccess:", name: notifUserCreationSuccess, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "onUserLoginSuccess:", name: notifUserLoginSuccess, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "onFailure:", name: notifFailure, object: nil)
     }
 
     override func didReceiveMemoryWarning() {
@@ -33,11 +43,15 @@ class HomeViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    func userCreationSuccess(notification: NSNotification) {
+    func onUserCreationSuccess(notification: NSNotification) {
         println(notification)
     }
     
-    func userCreationFail(notification: NSNotification) {
+    func onUserLoginSuccess(notification: NSNotification) {
+        println(notification)
+    }
+    
+    func onFailure(notification: NSNotification) {
         println(notification)
     }
 }
