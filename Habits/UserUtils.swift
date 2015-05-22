@@ -15,6 +15,7 @@ struct UserUtils {
         self.userDefaults.setValue(user.email, forKey: kUserEmail)
         self.userDefaults.setValue(user.name, forKey: kUserName)
         self.userDefaults.setValue(user.token, forKey: kUserToken)
+        self.userDefaults.setValue(user.stats, forKey: kUserStats)
         
         onComplete()
     }
@@ -26,6 +27,7 @@ struct UserUtils {
             user.name = userDefaults.valueForKey(kUserName) as! String
             user.email = userDefaults.valueForKey(kUserEmail) as! String
             user.token = userDefaults.valueForKey(kUserToken) as! String
+            user.stats = userDefaults.valueForKey(kUserStats) as! String
             
             return user;
         }

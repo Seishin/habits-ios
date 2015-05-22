@@ -25,16 +25,18 @@ class HomeViewController: UIViewController {
         
 //        println(UserUtils.getUserProfile())
         
-        ApiClient.getUsersApi().getUserById("555ed5f92fe0280300a9d1b0", onComplete: { (user) -> Void in
-            println(user)
-        })
-
+//        ApiClient.getUsersApi().getUserById("555ed5f92fe0280300a9d1b0", onComplete: { (user) -> Void in
+//            println(user)
+//        })
+        
+        ApiClient.getUserStatsApi().getStats(UserUtils.getUserProfile()!)
         
     }
     
     func setupNotifications() {
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "onUserCreationSuccess:", name: notifUserCreationSuccess, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "onUserLoginSuccess:", name: notifUserLoginSuccess, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "onUserStatsGetSuccess:", name: notifUserStatsGetSuccess, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "onFailure:", name: notifFailure, object: nil)
     }
 
@@ -49,6 +51,10 @@ class HomeViewController: UIViewController {
     
     func onUserLoginSuccess(notification: NSNotification) {
         println(notification)
+    }
+    
+    func onUserStatsGetSuccess(notification: NSNotification) {
+        println((notification.object as! UserStats).maxLvlExp)
     }
     
     func onFailure(notification: NSNotification) {

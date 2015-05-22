@@ -64,6 +64,7 @@ class UsersApi {
         user.name = data["name"] as! String
         user.email = data["email"] as! String
         user.token = data["token"] as! String
+        user.stats = data["stats"] as! String
         
         return user
     }

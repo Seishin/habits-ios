@@ -12,4 +12,7 @@ struct ApiClient {
         return UsersApi.getInstance()
     }
 
+    static func getUserStatsApi() -> UserStatsApi {
+        return UserStatsApi.getInstance()
+    }
 }
