@@ -18,6 +18,9 @@
 		9863A82A1B0F07320098E17F /* NotificationsUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9863A8291B0F07320098E17F /* NotificationsUtils.swift */; };
 		9863A82C1B0F14400098E17F /* UserStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9863A82B1B0F14400098E17F /* UserStats.swift */; };
 		9863A82E1B0F1AB10098E17F /* UserStatsApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9863A82D1B0F1AB10098E17F /* UserStatsApi.swift */; };
+		9863A8351B0F48C70098E17F /* DailyTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9863A8341B0F48C70098E17F /* DailyTask.swift */; };
+		9863A8371B0F49020098E17F /* DailyTasksList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9863A8361B0F49020098E17F /* DailyTasksList.swift */; };
+		9863A8391B0F49CD0098E17F /* DailyTasksApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9863A8381B0F49CD0098E17F /* DailyTasksApi.swift */; };
 		9896D82E1B0C66B0007F2316 /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9896D82D1B0C66B0007F2316 /* ApiClient.swift */; };
 		9896D8311B0C6715007F2316 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9896D8301B0C6715007F2316 /* User.swift */; };
 		9896D8351B0C689D007F2316 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9896D8341B0C689D007F2316 /* Constants.swift */; };
@@ -52,6 +55,9 @@
 		9863A8291B0F07320098E17F /* NotificationsUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationsUtils.swift; sourceTree = "<group>"; };
 		9863A82B1B0F14400098E17F /* UserStats.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserStats.swift; sourceTree = "<group>"; };
 		9863A82D1B0F1AB10098E17F /* UserStatsApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserStatsApi.swift; sourceTree = "<group>"; };
+		9863A8341B0F48C70098E17F /* DailyTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DailyTask.swift; sourceTree = "<group>"; };
+		9863A8361B0F49020098E17F /* DailyTasksList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DailyTasksList.swift; sourceTree = "<group>"; };
+		9863A8381B0F49CD0098E17F /* DailyTasksApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DailyTasksApi.swift; sourceTree = "<group>"; };
 		9896D82D1B0C66B0007F2316 /* ApiClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
 		9896D8301B0C6715007F2316 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		9896D8341B0C689D007F2316 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -170,13 +176,32 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		9863A8321B0F48B00098E17F /* User */ = {
+			isa = PBXGroup;
+			children = (
+				9896D8301B0C6715007F2316 /* User.swift */,
+				9863A82B1B0F14400098E17F /* UserStats.swift */,
+			);
+			name = User;
+			sourceTree = "<group>";
+		};
+		9863A8331B0F48B80098E17F /* DailyTask */ = {
+			isa = PBXGroup;
+			children = (
+				9863A8341B0F48C70098E17F /* DailyTask.swift */,
+				9863A8361B0F49020098E17F /* DailyTasksList.swift */,
+			);
+			name = DailyTask;
+			sourceTree = "<group>";
+		};
 		9896D82C1B0C66A2007F2316 /* API */ = {
 			isa = PBXGroup;
 			children = (
 				9896D82F1B0C6705007F2316 /* Models */,
-				9896D82D1B0C66B0007F2316 /* ApiClient.swift */,
+				9863A8381B0F49CD0098E17F /* DailyTasksApi.swift */,
 				9863A8271B0F03BF0098E17F /* UsersApi.swift */,
 				9863A82D1B0F1AB10098E17F /* UserStatsApi.swift */,
+				9896D82D1B0C66B0007F2316 /* ApiClient.swift */,
 			);
 			name = API;
 			sourceTree = "<group>";
@@ -184,8 +209,8 @@
 		9896D82F1B0C6705007F2316 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				9896D8301B0C6715007F2316 /* User.swift */,
-				9863A82B1B0F14400098E17F /* UserStats.swift */,
+				9863A8331B0F48B80098E17F /* DailyTask */,
+				9863A8321B0F48B00098E17F /* User */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -342,8 +367,11 @@
 				9896D8311B0C6715007F2316 /* User.swift in Sources */,
 				9863A8281B0F03BF0098E17F /* UsersApi.swift in Sources */,
 				983C8FB41AFD17F1004A1435 /* HomeViewController.swift in Sources */,
+				9863A8391B0F49CD0098E17F /* DailyTasksApi.swift in Sources */,
+				9863A8371B0F49020098E17F /* DailyTasksList.swift in Sources */,
 				983C8FB21AFD17F1004A1435 /* AppDelegate.swift in Sources */,
 				9863A82E1B0F1AB10098E17F /* UserStatsApi.swift in Sources */,
+				9863A8351B0F48C70098E17F /* DailyTask.swift in Sources */,
 				9863A82C1B0F14400098E17F /* UserStats.swift in Sources */,
 				9896D82E1B0C66B0007F2316 /* ApiClient.swift in Sources */,
 				9863A82A1B0F07320098E17F /* NotificationsUtils.swift in Sources */,

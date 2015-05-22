@@ -15,4 +15,8 @@ struct ApiClient {
     static func getUserStatsApi() -> UserStatsApi {
         return UserStatsApi.getInstance()
     }
+    
+    static func getDailyTasksApi() -> DailyTasksApi {
+        return DailyTasksApi.getInstance()
+    }
 }
