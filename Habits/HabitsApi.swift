@@ -68,7 +68,7 @@ class HabitsApi {
             if (error != nil) {
                 NotificationsUtils.sendFailureNotification("Cannot get this habits list.")
             } else {
-                let habitsList: HabitsList = self.getHabitssListObjectFromResponse(response)!
+                let habitsList: HabitsList = self.getHabitsListObjectFromResponse(response)!
                 NotificationsUtils.sendNotificaiton(notifHabitsListGetSuccess, object: habitsList)
             }
         }
@@ -94,7 +94,12 @@ class HabitsApi {
         JSONHTTPClient.requestHeaders().setValue(user.token, forKey: "Authorization")
         JSONHTTPClient.postJSONFromURLWithString(url, params: nil) { (response: AnyObject!, error: JSONModelError!) -> Void in
             
-            println(response)
+            if (error != nil) {
+                NotificationsUtils.sendFailureNotification("Cannot increment the selected habit.")
+            } else {
+                let habit: Habit = self.getHabitObjectFromResponse(response)!
+                NotificationsUtils.sendNotificaiton(notifHabitIncrementSuccess, object: habit)
+            }
         }
     }
  
@@ -109,7 +114,7 @@ class HabitsApi {
         return habit
     }
     
-    private func getHabitssListObjectFromResponse(response: AnyObject) -> HabitsList? {
+    private func getHabitsListObjectFromResponse(response: AnyObject) -> HabitsList? {
         let data: NSDictionary = NSDictionary(dictionary: response as! [NSObject : AnyObject])
         let habits: NSArray = data.valueForKey("habits") as! NSArray
         
