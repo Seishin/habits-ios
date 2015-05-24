@@ -6,4 +6,6 @@
 //  Copyright (c) 2015 Seishin. All rights reserved.
 //
 
-import Foundation
+class ToDosList: JSONModel {
+    var toDosList: NSMutableArray = NSMutableArray()
+}

@@ -23,4 +23,8 @@ struct ApiClient {
     static func getHabitsApi() -> HabitsApi {
         return HabitsApi.getInstance()
     }
+    
+    static func getToDosApi() -> ToDosApi {
+        return ToDosApi.getInstance()
+    }
 }

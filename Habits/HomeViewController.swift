@@ -45,6 +45,7 @@ class HomeViewController: UIViewController {
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "onDailyTaskCreateSuccess:", name: notifDailyTaskCreateSuccess, object: nil)
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "onHabitCreateSuccess:", name: notifHabitCreateSuccess, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "onHabitIncrementSuccess:", name: notifHabitIncrementSuccess, object: nil)
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "onFailure:", name: notifFailure, object: nil)
     }
@@ -62,11 +63,11 @@ class HomeViewController: UIViewController {
         let habit: Habit = Habit()
         habit.text = "Bla"
         
-        ApiClient.getHabitsApi().createHabit(UserUtils.getUserProfile()!, habit: habit)
+//        ApiClient.getHabitsApi().createHabit(UserUtils.getUserProfile()!, habit: habit)
 //        ApiClient.getHabitsApi().getHabit(UserUtils.getUserProfile()!, id: "5560661bc9a83d0300133185")
 //        ApiClient.getHabitsApi().getHabitsList(UserUtils.getUserProfile()!)
 //        ApiClient.getHabitsApi().removeHabit(UserUtils.getUserProfile()!, id: "5560661bc9a83d0300133185")
-//        ApiClient.getHabitsApi().incrementHabit(UserUtils.getUserProfile()!, id: "556075b761515c900ff528fd")
+        ApiClient.getHabitsApi().incrementHabit(UserUtils.getUserProfile()!, id: "556075b761515c900ff528fd")
     }
     
     func onUserStatsGetSuccess(notification: NSNotification) {
@@ -100,6 +101,10 @@ class HomeViewController: UIViewController {
     
     
     func onHabitCreateSuccess(notification: NSNotification) {
+        println(notification.object)
+    }
+    
+    func onHabitIncrementSuccess(notification: NSNotification) {
         println(notification.object)
     }
     

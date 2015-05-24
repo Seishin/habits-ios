@@ -6,4 +6,8 @@
 //  Copyright (c) 2015 Seishin. All rights reserved.
 //
 
-import Foundation
+class ToDo: JSONModel {
+    var id: NSString!
+    var text: NSString!
+    var state: NSNumber!
+}
