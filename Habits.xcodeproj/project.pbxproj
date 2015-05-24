@@ -21,6 +21,9 @@
 		9863A8351B0F48C70098E17F /* DailyTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9863A8341B0F48C70098E17F /* DailyTask.swift */; };
 		9863A8371B0F49020098E17F /* DailyTasksList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9863A8361B0F49020098E17F /* DailyTasksList.swift */; };
 		9863A8391B0F49CD0098E17F /* DailyTasksApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9863A8381B0F49CD0098E17F /* DailyTasksApi.swift */; };
+		9863A83B1B1097640098E17F /* Habit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9863A83A1B1097640098E17F /* Habit.swift */; };
+		9863A83E1B1097800098E17F /* HabitsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9863A83D1B1097800098E17F /* HabitsList.swift */; };
+		9863A8411B1098530098E17F /* HabitsApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9863A8401B1098530098E17F /* HabitsApi.swift */; };
 		9896D82E1B0C66B0007F2316 /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9896D82D1B0C66B0007F2316 /* ApiClient.swift */; };
 		9896D8311B0C6715007F2316 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9896D8301B0C6715007F2316 /* User.swift */; };
 		9896D8351B0C689D007F2316 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9896D8341B0C689D007F2316 /* Constants.swift */; };
@@ -58,6 +61,9 @@
 		9863A8341B0F48C70098E17F /* DailyTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DailyTask.swift; sourceTree = "<group>"; };
 		9863A8361B0F49020098E17F /* DailyTasksList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DailyTasksList.swift; sourceTree = "<group>"; };
 		9863A8381B0F49CD0098E17F /* DailyTasksApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DailyTasksApi.swift; sourceTree = "<group>"; };
+		9863A83A1B1097640098E17F /* Habit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Habit.swift; sourceTree = "<group>"; };
+		9863A83D1B1097800098E17F /* HabitsList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HabitsList.swift; sourceTree = "<group>"; };
+		9863A8401B1098530098E17F /* HabitsApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HabitsApi.swift; sourceTree = "<group>"; };
 		9896D82D1B0C66B0007F2316 /* ApiClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
 		9896D8301B0C6715007F2316 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		9896D8341B0C689D007F2316 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -136,7 +142,7 @@
 		983C8FAE1AFD17F1004A1435 /* Habits */ = {
 			isa = PBXGroup;
 			children = (
-				9896D82C1B0C66A2007F2316 /* API */,
+				9896D82C1B0C66A2007F2316 /* Network */,
 				9896D8361B0C68A2007F2316 /* Utils */,
 				9817DB751B0E301D00716BE5 /* Controllers */,
 				983C8FB11AFD17F1004A1435 /* AppDelegate.swift */,
@@ -194,16 +200,34 @@
 			name = DailyTask;
 			sourceTree = "<group>";
 		};
-		9896D82C1B0C66A2007F2316 /* API */ = {
+		9863A83C1B1097690098E17F /* Habit */ = {
 			isa = PBXGroup;
 			children = (
-				9896D82F1B0C6705007F2316 /* Models */,
+				9863A83A1B1097640098E17F /* Habit.swift */,
+				9863A83D1B1097800098E17F /* HabitsList.swift */,
+			);
+			name = Habit;
+			sourceTree = "<group>";
+		};
+		9863A83F1B10983F0098E17F /* APIs */ = {
+			isa = PBXGroup;
+			children = (
 				9863A8381B0F49CD0098E17F /* DailyTasksApi.swift */,
 				9863A8271B0F03BF0098E17F /* UsersApi.swift */,
 				9863A82D1B0F1AB10098E17F /* UserStatsApi.swift */,
+				9863A8401B1098530098E17F /* HabitsApi.swift */,
+			);
+			name = APIs;
+			sourceTree = "<group>";
+		};
+		9896D82C1B0C66A2007F2316 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				9896D82F1B0C6705007F2316 /* Models */,
+				9863A83F1B10983F0098E17F /* APIs */,
 				9896D82D1B0C66B0007F2316 /* ApiClient.swift */,
 			);
-			name = API;
+			name = Network;
 			sourceTree = "<group>";
 		};
 		9896D82F1B0C6705007F2316 /* Models */ = {
@@ -211,6 +235,7 @@
 			children = (
 				9863A8331B0F48B80098E17F /* DailyTask */,
 				9863A8321B0F48B00098E17F /* User */,
+				9863A83C1B1097690098E17F /* Habit */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -373,9 +398,12 @@
 				9863A82E1B0F1AB10098E17F /* UserStatsApi.swift in Sources */,
 				9863A8351B0F48C70098E17F /* DailyTask.swift in Sources */,
 				9863A82C1B0F14400098E17F /* UserStats.swift in Sources */,
+				9863A83B1B1097640098E17F /* Habit.swift in Sources */,
+				9863A83E1B1097800098E17F /* HabitsList.swift in Sources */,
 				9896D82E1B0C66B0007F2316 /* ApiClient.swift in Sources */,
 				9863A82A1B0F07320098E17F /* NotificationsUtils.swift in Sources */,
 				9896D8351B0C689D007F2316 /* Constants.swift in Sources */,
+				9863A8411B1098530098E17F /* HabitsApi.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

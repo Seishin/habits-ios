@@ -6,19 +6,34 @@
 //  Copyright (c) 2015 Seishin. All rights reserved.
 //
 
+// Notifications names
+let notifDailyTasksListGetSuccess = "notif_daily_tasks_get_success"
+let notifDailyTaskGetSuccess = "notif_daily_task_get_success"
+let notifDailyTaskChangeStateSuccess = "notif_daily_task_change_state_success"
+let notifDailyTaskCreateSuccess = "notif_daily_task_create_success"
+let notifDailyTaskRemove = "notif_daily_task_remove"
+
 class DailyTasksApi {
     
-    static let instance: DailyTasksApi = DailyTasksApi()
+    private static let instance: DailyTasksApi = DailyTasksApi()
+    private let dateStr: String!
+    private let dateFormatter: NSDateFormatter = NSDateFormatter()
+    private let dailyTasksBaseUrl = baseUrl + "/daily-tasks/"
     
-    init() {}
+    init() {
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        dateStr = dateFormatter.stringFromDate(NSDate())
+    }
     
     static func getInstance() -> DailyTasksApi {
         return instance
     }
     
-    func getDailyTasks(user: User, date: String) {
+    func getDailyTasks(user: User) {
+        let url: String = dailyTasksBaseUrl + "all/"
+        
         JSONHTTPClient.requestHeaders().setValue(user.token, forKey: "Authorization")
-        JSONHTTPClient.getJSONFromURLWithString(getAllDailyTasksUrl, params: ["userId": user.id, "date": date]) { (response: AnyObject!, error: JSONModelError!) -> Void in
+        JSONHTTPClient.getJSONFromURLWithString(url, params: ["userId": user.id, "date": dateStr]) { (response: AnyObject!, error: JSONModelError!) -> Void in
             
             if (error != nil) {
                 NotificationsUtils.sendFailureNotification("Cannot get daily tasks.")
@@ -29,11 +44,11 @@ class DailyTasksApi {
         }
     }
     
-    func getDailyTask(user: User, taskId: String, date: String) {
-        let url: String = dailyTasksUrl + "/" + taskId + "/"
+    func getDailyTask(user: User, taskId: String) {
+        let url: String = dailyTasksBaseUrl + "/" + taskId + "/"
         
         JSONHTTPClient.requestHeaders().setValue(user.token, forKey: "Authorization")
-        JSONHTTPClient.getJSONFromURLWithString(url, params: ["userId": user.id, "date": date]) { (response: AnyObject!, error: JSONModelError!) -> Void in
+        JSONHTTPClient.getJSONFromURLWithString(url, params: ["userId": user.id, "date": dateStr]) { (response: AnyObject!, error: JSONModelError!) -> Void in
             
             if (error != nil) {
                 NotificationsUtils.sendFailureNotification("Cannot get desired daily task.")
@@ -45,7 +60,7 @@ class DailyTasksApi {
     }
     
     func createDailyTask(user: User, dailyTask: DailyTask) {
-        let url: String = dailyTasksUrl + "?userId=" + String(user.id)
+        let url: String = dailyTasksBaseUrl + "?userId=" + String(user.id)
         
         JSONHTTPClient.requestHeaders().setValue(user.token, forKey: "Authorization")
         JSONHTTPClient.postJSONFromURLWithString(url, bodyData: dailyTask.toJSONData()) { (response: AnyObject!, error: JSONModelError!) -> Void in
@@ -60,7 +75,7 @@ class DailyTasksApi {
     }
     
     func removeDailyTask(user: User, dailyTask: DailyTask) {
-        let url: String = dailyTasksUrl + String(dailyTask.id) + "/?userId=" + String(user.id)
+        let url: String = dailyTasksBaseUrl + String(dailyTask.id) + "/?userId=" + String(user.id)
         
         JSONHTTPClient.JSONFromURLWithString(url, method: "DELETE", params: nil, orBodyData: nil, headers: ["Authorization" : user.token]) { (response: AnyObject!, error: JSONModelError!) -> Void in
             
@@ -73,8 +88,8 @@ class DailyTasksApi {
         }
     }
     
-    func checkDailyTask(user: User, dailyTask: DailyTask, date: String) {
-        let url: String = dailyTasksUrl + String(dailyTask.id) + "/check/?userId=" + String(user.id) + "&date=" + date
+    func checkDailyTask(user: User, dailyTask: DailyTask) {
+        let url: String = dailyTasksBaseUrl + String(dailyTask.id) + "/check/?userId=" + String(user.id) + "&date=" + dateStr
         
         JSONHTTPClient.requestHeaders().setValue(user.token, forKey: "Authorization")
         JSONHTTPClient.postJSONFromURLWithString(url, params: nil) { (response: AnyObject!, error: JSONModelError!) -> Void in
@@ -88,8 +103,8 @@ class DailyTasksApi {
         }
     }
     
-    func uncheckDailyTask(user: User, dailyTask: DailyTask, date: String) {
-        let url: String = dailyTasksUrl + String(dailyTask.id) + "/uncheck/?userId=" + String(user.id) + "&date=" + date
+    func uncheckDailyTask(user: User, dailyTask: DailyTask) {
+        let url: String = dailyTasksBaseUrl + String(dailyTask.id) + "/uncheck/?userId=" + String(user.id) + "&date=" + dateStr
         
         JSONHTTPClient.requestHeaders().setValue(user.token, forKey: "Authorization")
         JSONHTTPClient.postJSONFromURLWithString(url, params: nil) { (response: AnyObject!, error: JSONModelError!) -> Void in

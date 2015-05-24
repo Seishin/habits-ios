@@ -6,9 +6,14 @@
 //  Copyright (c) 2015 Seishin. All rights reserved.
 //
 
+// Notifications names
+let notifUserCreationSuccess = "notif_user_creation_success"
+let notifUserLoginSuccess = "notif_user_login_success"
+
 class UsersApi {
     
-    static let instance: UsersApi = UsersApi()
+    private static let instance: UsersApi = UsersApi()
+    private let userBaseUrl = baseUrl + "/users"
     
     init() {}
     
@@ -17,7 +22,7 @@ class UsersApi {
     }
     
     func createUser(user: User) {
-        JSONHTTPClient.postJSONFromURLWithString(userUrl, bodyData: user.toJSONData()) { (response: AnyObject!, error: JSONModelError!) -> Void in
+        JSONHTTPClient.postJSONFromURLWithString(userBaseUrl, bodyData: user.toJSONData()) { (response: AnyObject!, error: JSONModelError!) -> Void in
             
             if (error != nil) {
                 NotificationsUtils.sendFailureNotification("Cannot create user's profile!")
@@ -30,7 +35,9 @@ class UsersApi {
     }
     
     func loginUser(user: User) {
-        JSONHTTPClient.postJSONFromURLWithString(loginUserUrl, bodyData: user.toJSONData()) { (response: AnyObject!, error: JSONModelError!) -> Void in
+        let url: String = userBaseUrl + "/login"
+        
+        JSONHTTPClient.postJSONFromURLWithString(url, bodyData: user.toJSONData()) { (response: AnyObject!, error: JSONModelError!) -> Void in
             
             if (error != nil) {
                 NotificationsUtils.sendFailureNotification("Cannot login the user!")
@@ -44,7 +51,7 @@ class UsersApi {
     }
     
     func getUserById(id: String, onComplete: (user: User?) -> Void) {
-        let url: String = userUrl + "/" + id
+        let url: String = userBaseUrl + "/" + id
         
         JSONHTTPClient.getJSONFromURLWithString(url, completion: { (response: AnyObject!, error: JSONModelError!) -> Void in
             
@@ -64,7 +71,7 @@ class UsersApi {
         user.name = data["name"] as! String
         user.email = data["email"] as! String
         user.token = data["token"] as! String
-        user.stats = data["stats"] as! String
+        user.stats = data["stats"] as? String
         
         return user
     }

@@ -6,9 +6,13 @@
 //  Copyright (c) 2015 Seishin. All rights reserved.
 //
 
+// Notifications names
+let notifUserStatsGetSuccess = "notif_user_stats_get_success"
+
 class UserStatsApi {
     
-    static let instance: UserStatsApi = UserStatsApi()
+    private static let instance: UserStatsApi = UserStatsApi()
+    private let userStatsBaseUrl = baseUrl + "/stats"
     
     init() {}
     
@@ -17,7 +21,7 @@ class UserStatsApi {
     }
     
     func getStats(user: User) {
-        let url: String = userStatsUrl + "/" + String(user.id)
+        let url: String = userStatsBaseUrl + "/" + String(user.id)
         
         JSONHTTPClient.requestHeaders().setValue(user.token, forKey: "Authorization")
         JSONHTTPClient.getJSONFromURLWithString(url, completion: { (response: AnyObject!, error: JSONModelError!) -> Void in

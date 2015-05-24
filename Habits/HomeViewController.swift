@@ -16,9 +16,9 @@ class HomeViewController: UIViewController {
         setupNotifications()
         
         var user: User = User()
-        user.email = "test"
+        user.email = "test3"
         user.password = "test"
-//        user.name = "test"
+        user.name = "test"
         
 //        ApiClient.getUsersApi().createUser(user)
         ApiClient.getUsersApi().loginUser(user)
@@ -37,11 +37,15 @@ class HomeViewController: UIViewController {
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "onUserCreationSuccess:", name: notifUserCreationSuccess, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "onUserLoginSuccess:", name: notifUserLoginSuccess, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "onUserStatsGetSuccess:", name: notifUserStatsGetSuccess, object: nil)
+        
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "onDailyTasksListGetSuccess:", name: notifDailyTasksListGetSuccess, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "onDailyTaskGetSuccess:", name: notifDailyTaskGetSuccess, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "onDailyTaskChangeStateSuccess:", name: notifDailyTaskChangeStateSuccess, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "onDailyTaskRemove:", name: notifDailyTaskRemove, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "onDailyTaskCreateSuccess:", name: notifDailyTaskCreateSuccess, object: nil)
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "onHabitCreateSuccess:", name: notifHabitCreateSuccess, object: nil)
+        
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "onFailure:", name: notifFailure, object: nil)
     }
 
@@ -55,19 +59,14 @@ class HomeViewController: UIViewController {
     }
     
     func onUserLoginSuccess(notification: NSNotification) {
-//        ApiClient.getDailyTasksApi().getDailyTask(UserUtils.getUserProfile()!, taskId: "55009019b094e5030015115f", date: "2015-05-22")
-//        ApiClient.getDailyTasksApi().getDailyTasks(UserUtils.getUserProfile()!, date: "2015-05-22")
+        let habit: Habit = Habit()
+        habit.text = "Bla"
         
-        
-        let task: DailyTask = DailyTask()
-//        task.id = "555f9c39fdde3d0300446f69"
-        task.text = "Test2"
-        
-        ApiClient.getDailyTasksApi().createDailyTask(UserUtils.getUserProfile()!, dailyTask: task)
-        
-//        ApiClient.getDailyTasksApi().getDailyTasks(UserUtils.getUserProfile()!, date: "2015-05-22")
-//        ApiClient.getDailyTasksApi().checkDailyTask(UserUtils.getUserProfile()!, dailyTask: task, date: "2015-05-22")
-//        ApiClient.getDailyTasksApi().removeDailyTask(UserUtils.getUserProfile()!, dailyTask: task)
+        ApiClient.getHabitsApi().createHabit(UserUtils.getUserProfile()!, habit: habit)
+//        ApiClient.getHabitsApi().getHabit(UserUtils.getUserProfile()!, id: "5560661bc9a83d0300133185")
+//        ApiClient.getHabitsApi().getHabitsList(UserUtils.getUserProfile()!)
+//        ApiClient.getHabitsApi().removeHabit(UserUtils.getUserProfile()!, id: "5560661bc9a83d0300133185")
+//        ApiClient.getHabitsApi().incrementHabit(UserUtils.getUserProfile()!, id: "556075b761515c900ff528fd")
     }
     
     func onUserStatsGetSuccess(notification: NSNotification) {
@@ -84,7 +83,7 @@ class HomeViewController: UIViewController {
     }
     
     func onDailyTaskCreateSuccess(notification: NSNotification) {
-        println(notification.object)
+        println(notification)
     }
     
     func onDailyTaskGetSuccess(notification: NSNotification) {
@@ -92,12 +91,18 @@ class HomeViewController: UIViewController {
     }
     
     func onDailyTaskChangeStateSuccess(notification: NSNotification) {
-        println(notification.object)
+        println(notification)
     }
     
     func onDailyTaskRemove(notification: NSNotification) {
         println(notification)
     }
+    
+    
+    func onHabitCreateSuccess(notification: NSNotification) {
+        println(notification.object)
+    }
+    
     
     func onFailure(notification: NSNotification) {
         println(notification)

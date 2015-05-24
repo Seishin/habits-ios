@@ -27,7 +27,7 @@ struct UserUtils {
             user.name = userDefaults.valueForKey(kUserName) as! String
             user.email = userDefaults.valueForKey(kUserEmail) as! String
             user.token = userDefaults.valueForKey(kUserToken) as! String
-            user.stats = userDefaults.valueForKey(kUserStats) as! String
+            user.stats = userDefaults.valueForKey(kUserStats) as? String
             
             return user;
         }
@@ -48,9 +48,5 @@ struct UserUtils {
         }
         
         return false
-    }
-    
-    private static func sendNotification(notificationName: String, object: AnyObject) {
-        NSNotificationCenter.defaultCenter().postNotificationName(notificationName, object: object)
     }
 }
