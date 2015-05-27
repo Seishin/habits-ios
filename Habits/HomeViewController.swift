@@ -16,7 +16,7 @@ class HomeViewController: UIViewController {
         setupNotifications()
         
         var user: User = User()
-        user.email = "test3"
+        user.email = "test10"
         user.password = "test"
         user.name = "test"
         
@@ -60,14 +60,23 @@ class HomeViewController: UIViewController {
     }
     
     func onUserLoginSuccess(notification: NSNotification) {
-        let habit: Habit = Habit()
-        habit.text = "Bla"
+//        let habit: Habit = Habit()
+//        habit.text = "Bla"
         
 //        ApiClient.getHabitsApi().createHabit(UserUtils.getUserProfile()!, habit: habit)
 //        ApiClient.getHabitsApi().getHabit(UserUtils.getUserProfile()!, id: "5560661bc9a83d0300133185")
 //        ApiClient.getHabitsApi().getHabitsList(UserUtils.getUserProfile()!)
 //        ApiClient.getHabitsApi().removeHabit(UserUtils.getUserProfile()!, id: "5560661bc9a83d0300133185")
-        ApiClient.getHabitsApi().incrementHabit(UserUtils.getUserProfile()!, id: "556075b761515c900ff528fd")
+//        ApiClient.getHabitsApi().incrementHabit(UserUtils.getUserProfile()!, id: "556075b761515c900ff528fd")
+        
+        var reward: Reward = Reward()
+        reward.text = "test"
+        reward.gold = 30
+        
+//        ApiClient.getRewardsApi().createReward(UserUtils.getUserProfile()!, reward: reward)
+//        ApiClient.getRewardsApi().getAllRewards(UserUtils.getUserProfile()!)
+//        ApiClient.getRewardsApi().getReward(UserUtils.getUserProfile()!, id: "55634aea01d8248123ad9f0c")
+        ApiClient.getRewardsApi().buyReward(UserUtils.getUserProfile()!, id: "55634aea01d8248123ad9f0c")
     }
     
     func onUserStatsGetSuccess(notification: NSNotification) {

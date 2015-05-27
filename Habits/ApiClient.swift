@@ -27,4 +27,8 @@ struct ApiClient {
     static func getToDosApi() -> ToDosApi {
         return ToDosApi.getInstance()
     }
+    
+    static func getRewardsApi() -> RewardsApi {
+        return RewardsApi.getInstance()
+    }
 }

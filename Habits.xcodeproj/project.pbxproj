@@ -10,6 +10,9 @@
 		9800DD191B11C13A00BE361C /* ToDo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9800DD181B11C13A00BE361C /* ToDo.swift */; };
 		9800DD1B1B11C17100BE361C /* ToDosList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9800DD1A1B11C17100BE361C /* ToDosList.swift */; };
 		9800DD1D1B11C1A300BE361C /* ToDosApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9800DD1C1B11C1A300BE361C /* ToDosApi.swift */; };
+		9800DD201B11FCF700BE361C /* Reward.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9800DD1F1B11FCF700BE361C /* Reward.swift */; };
+		9800DD221B11FD4D00BE361C /* RewardsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9800DD211B11FD4D00BE361C /* RewardsList.swift */; };
+		9800DD241B11FD7700BE361C /* RewardsApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9800DD231B11FD7700BE361C /* RewardsApi.swift */; };
 		9817DB741B0E24C000716BE5 /* UserUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9817DB731B0E24C000716BE5 /* UserUtils.swift */; };
 		983C8FB21AFD17F1004A1435 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983C8FB11AFD17F1004A1435 /* AppDelegate.swift */; };
 		983C8FB41AFD17F1004A1435 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983C8FB31AFD17F1004A1435 /* HomeViewController.swift */; };
@@ -49,6 +52,9 @@
 		9800DD181B11C13A00BE361C /* ToDo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDo.swift; sourceTree = "<group>"; };
 		9800DD1A1B11C17100BE361C /* ToDosList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDosList.swift; sourceTree = "<group>"; };
 		9800DD1C1B11C1A300BE361C /* ToDosApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDosApi.swift; sourceTree = "<group>"; };
+		9800DD1F1B11FCF700BE361C /* Reward.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reward.swift; sourceTree = "<group>"; };
+		9800DD211B11FD4D00BE361C /* RewardsList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RewardsList.swift; sourceTree = "<group>"; };
+		9800DD231B11FD7700BE361C /* RewardsApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RewardsApi.swift; sourceTree = "<group>"; };
 		9817DB731B0E24C000716BE5 /* UserUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserUtils.swift; sourceTree = "<group>"; };
 		983C8FAC1AFD17F1004A1435 /* Habits.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Habits.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		983C8FB01AFD17F1004A1435 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -124,6 +130,15 @@
 				9800DD1A1B11C17100BE361C /* ToDosList.swift */,
 			);
 			name = ToDo;
+			sourceTree = "<group>";
+		};
+		9800DD1E1B11FCCD00BE361C /* Reward */ = {
+			isa = PBXGroup;
+			children = (
+				9800DD1F1B11FCF700BE361C /* Reward.swift */,
+				9800DD211B11FD4D00BE361C /* RewardsList.swift */,
+			);
+			name = Reward;
 			sourceTree = "<group>";
 		};
 		9817DB751B0E301D00716BE5 /* Controllers */ = {
@@ -232,6 +247,7 @@
 				9863A82D1B0F1AB10098E17F /* UserStatsApi.swift */,
 				9863A8401B1098530098E17F /* HabitsApi.swift */,
 				9800DD1C1B11C1A300BE361C /* ToDosApi.swift */,
+				9800DD231B11FD7700BE361C /* RewardsApi.swift */,
 			);
 			name = APIs;
 			sourceTree = "<group>";
@@ -249,6 +265,7 @@
 		9896D82F1B0C6705007F2316 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				9800DD1E1B11FCCD00BE361C /* Reward */,
 				9800DD171B11C12C00BE361C /* ToDo */,
 				9863A8331B0F48B80098E17F /* DailyTask */,
 				9863A8321B0F48B00098E17F /* User */,
@@ -406,9 +423,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				9817DB741B0E24C000716BE5 /* UserUtils.swift in Sources */,
+				9800DD241B11FD7700BE361C /* RewardsApi.swift in Sources */,
+				9800DD221B11FD4D00BE361C /* RewardsList.swift in Sources */,
 				9896D8311B0C6715007F2316 /* User.swift in Sources */,
 				9863A8281B0F03BF0098E17F /* UsersApi.swift in Sources */,
 				983C8FB41AFD17F1004A1435 /* HomeViewController.swift in Sources */,
+				9800DD201B11FCF700BE361C /* Reward.swift in Sources */,
 				9800DD1D1B11C1A300BE361C /* ToDosApi.swift in Sources */,
 				9863A8391B0F49CD0098E17F /* DailyTasksApi.swift in Sources */,
 				9863A8371B0F49020098E17F /* DailyTasksList.swift in Sources */,
