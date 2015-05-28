@@ -15,11 +15,15 @@
 		9800DD241B11FD7700BE361C /* RewardsApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9800DD231B11FD7700BE361C /* RewardsApi.swift */; };
 		9817DB741B0E24C000716BE5 /* UserUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9817DB731B0E24C000716BE5 /* UserUtils.swift */; };
 		983C8FB21AFD17F1004A1435 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983C8FB11AFD17F1004A1435 /* AppDelegate.swift */; };
-		983C8FB41AFD17F1004A1435 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983C8FB31AFD17F1004A1435 /* HomeViewController.swift */; };
+		983C8FB41AFD17F1004A1435 /* HabitsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983C8FB31AFD17F1004A1435 /* HabitsViewController.swift */; };
 		983C8FB71AFD17F1004A1435 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 983C8FB51AFD17F1004A1435 /* Main.storyboard */; };
 		983C8FB91AFD17F1004A1435 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 983C8FB81AFD17F1004A1435 /* Images.xcassets */; };
 		983C8FBC1AFD17F1004A1435 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 983C8FBA1AFD17F1004A1435 /* LaunchScreen.xib */; };
 		983C8FC81AFD17F1004A1435 /* HabitsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983C8FC71AFD17F1004A1435 /* HabitsTests.swift */; };
+		9860C4DE1B16EA6000B1758B /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9860C4DD1B16EA6000B1758B /* ProfileViewController.swift */; };
+		9860C4E01B16EB8E00B1758B /* DailyTasksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9860C4DF1B16EB8E00B1758B /* DailyTasksViewController.swift */; };
+		9860C4E21B16EBAD00B1758B /* ToDosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9860C4E11B16EBAD00B1758B /* ToDosViewController.swift */; };
+		9860C4E41B16EBC800B1758B /* RewardsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9860C4E31B16EBC800B1758B /* RewardsViewController.swift */; };
 		9863A8281B0F03BF0098E17F /* UsersApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9863A8271B0F03BF0098E17F /* UsersApi.swift */; };
 		9863A82A1B0F07320098E17F /* NotificationsUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9863A8291B0F07320098E17F /* NotificationsUtils.swift */; };
 		9863A82C1B0F14400098E17F /* UserStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9863A82B1B0F14400098E17F /* UserStats.swift */; };
@@ -59,13 +63,17 @@
 		983C8FAC1AFD17F1004A1435 /* Habits.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Habits.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		983C8FB01AFD17F1004A1435 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		983C8FB11AFD17F1004A1435 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		983C8FB31AFD17F1004A1435 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		983C8FB31AFD17F1004A1435 /* HabitsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitsViewController.swift; sourceTree = "<group>"; };
 		983C8FB61AFD17F1004A1435 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		983C8FB81AFD17F1004A1435 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		983C8FBB1AFD17F1004A1435 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		983C8FC11AFD17F1004A1435 /* HabitsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HabitsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		983C8FC61AFD17F1004A1435 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		983C8FC71AFD17F1004A1435 /* HabitsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitsTests.swift; sourceTree = "<group>"; };
+		9860C4DD1B16EA6000B1758B /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		9860C4DF1B16EB8E00B1758B /* DailyTasksViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DailyTasksViewController.swift; sourceTree = "<group>"; };
+		9860C4E11B16EBAD00B1758B /* ToDosViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDosViewController.swift; sourceTree = "<group>"; };
+		9860C4E31B16EBC800B1758B /* RewardsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RewardsViewController.swift; sourceTree = "<group>"; };
 		9863A8271B0F03BF0098E17F /* UsersApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsersApi.swift; sourceTree = "<group>"; };
 		9863A8291B0F07320098E17F /* NotificationsUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationsUtils.swift; sourceTree = "<group>"; };
 		9863A82B1B0F14400098E17F /* UserStats.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserStats.swift; sourceTree = "<group>"; };
@@ -144,7 +152,11 @@
 		9817DB751B0E301D00716BE5 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				983C8FB31AFD17F1004A1435 /* HomeViewController.swift */,
+				983C8FB31AFD17F1004A1435 /* HabitsViewController.swift */,
+				9860C4E31B16EBC800B1758B /* RewardsViewController.swift */,
+				9860C4DD1B16EA6000B1758B /* ProfileViewController.swift */,
+				9860C4DF1B16EB8E00B1758B /* DailyTasksViewController.swift */,
+				9860C4E11B16EBAD00B1758B /* ToDosViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -422,12 +434,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9860C4E21B16EBAD00B1758B /* ToDosViewController.swift in Sources */,
+				9860C4E41B16EBC800B1758B /* RewardsViewController.swift in Sources */,
 				9817DB741B0E24C000716BE5 /* UserUtils.swift in Sources */,
 				9800DD241B11FD7700BE361C /* RewardsApi.swift in Sources */,
 				9800DD221B11FD4D00BE361C /* RewardsList.swift in Sources */,
 				9896D8311B0C6715007F2316 /* User.swift in Sources */,
 				9863A8281B0F03BF0098E17F /* UsersApi.swift in Sources */,
-				983C8FB41AFD17F1004A1435 /* HomeViewController.swift in Sources */,
+				983C8FB41AFD17F1004A1435 /* HabitsViewController.swift in Sources */,
 				9800DD201B11FCF700BE361C /* Reward.swift in Sources */,
 				9800DD1D1B11C1A300BE361C /* ToDosApi.swift in Sources */,
 				9863A8391B0F49CD0098E17F /* DailyTasksApi.swift in Sources */,
@@ -437,10 +451,12 @@
 				9863A8351B0F48C70098E17F /* DailyTask.swift in Sources */,
 				9800DD1B1B11C17100BE361C /* ToDosList.swift in Sources */,
 				9863A82C1B0F14400098E17F /* UserStats.swift in Sources */,
+				9860C4DE1B16EA6000B1758B /* ProfileViewController.swift in Sources */,
 				9800DD191B11C13A00BE361C /* ToDo.swift in Sources */,
 				9863A83B1B1097640098E17F /* Habit.swift in Sources */,
 				9863A83E1B1097800098E17F /* HabitsList.swift in Sources */,
 				9896D82E1B0C66B0007F2316 /* ApiClient.swift in Sources */,
+				9860C4E01B16EB8E00B1758B /* DailyTasksViewController.swift in Sources */,
 				9863A82A1B0F07320098E17F /* NotificationsUtils.swift in Sources */,
 				9896D8351B0C689D007F2316 /* Constants.swift in Sources */,
 				9863A8411B1098530098E17F /* HabitsApi.swift in Sources */,

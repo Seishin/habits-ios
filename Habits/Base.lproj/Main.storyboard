@@ -4,7 +4,25 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
     </dependencies>
     <scenes>
-        <!--Item 2-->
+        <!--Item-->
+        <scene sceneID="VRP-im-AsB">
+            <objects>
+                <navigationController id="3VZ-pa-YMl" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="qA8-zY-noZ"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="zaa-4e-TJb">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="jEm-Rw-TRW" kind="relationship" relationship="rootViewController" id="0ME-hp-TJp"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3H0-Ox-KB1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="115" y="796"/>
+        </scene>
+        <!--Daily Tasks-->
         <scene sceneID="mKJ-NA-sjA">
             <objects>
                 <viewController id="jEm-Rw-TRW" sceneMemberID="viewController">
@@ -13,42 +31,193 @@
                         <viewControllerLayoutGuide type="bottom" id="rbw-cc-QCz"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="jkC-PW-TyI">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" id="gCI-wB-byr"/>
+                    <navigationItem key="navigationItem" title="Daily Tasks" id="89w-ZM-sC5">
+                        <barButtonItem key="rightBarButtonItem" title="Profile" id="5wk-yx-wGk">
+                            <connections>
+                                <segue destination="nzN-ba-TD6" kind="presentation" id="uaz-XP-d8z"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l6F-UW-GKE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="115" y="748"/>
+            <point key="canvasLocation" x="644" y="796"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="j4p-5R-asz">
+            <objects>
+                <navigationController id="paF-ML-jlb" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="guD-ZO-Lrc"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ouc-xF-CS1">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="g6X-UD-ABx" kind="relationship" relationship="rootViewController" id="Vhd-nx-lFK"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WJS-EA-2Rz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="115" y="1496"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="wXd-OR-Vz6">
+            <objects>
+                <navigationController id="5VT-Ej-Tp3" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="XcG-bb-cWq"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="wtv-fh-QvH">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="76b-fe-Uvf" kind="relationship" relationship="rootViewController" id="ac7-gP-7rW"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4sg-bu-JLl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="115" y="2205"/>
+        </scene>
+        <!--Rewards-->
+        <scene sceneID="4Nm-IB-0LJ">
+            <objects>
+                <viewController id="76b-fe-Uvf" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="nko-XW-RdP"/>
+                        <viewControllerLayoutGuide type="bottom" id="366-1p-za2"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="u1a-En-gs5">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Rewards" id="RgV-AA-eR0">
+                        <barButtonItem key="rightBarButtonItem" title="Profile" id="rDe-8c-yya">
+                            <connections>
+                                <segue destination="nzN-ba-TD6" kind="presentation" id="oXW-DC-BJ6"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Mix-Q3-avw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="644" y="2205"/>
+        </scene>
+        <!--To Dos-->
+        <scene sceneID="Zzn-Zl-vhQ">
+            <objects>
+                <viewController id="g6X-UD-ABx" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="dT2-yB-FSq"/>
+                        <viewControllerLayoutGuide type="bottom" id="kD4-Za-ojI"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="bkv-j3-vTC">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="To Dos" id="OQG-F4-gYw">
+                        <barButtonItem key="rightBarButtonItem" title="Profile" id="JbE-0y-6Sr">
+                            <connections>
+                                <segue destination="nzN-ba-TD6" kind="presentation" id="JjI-YS-XGH"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5sP-A8-heT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="644" y="1496"/>
+        </scene>
+        <!--Profile View Controller-->
+        <scene sceneID="vjf-xC-hoH">
+            <objects>
+                <viewController id="nzN-ba-TD6" customClass="ProfileViewController" customModule="Habits" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Vrg-Xk-Xua"/>
+                        <viewControllerLayoutGuide type="bottom" id="QDU-0T-7xc"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="iDm-di-0ff">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4dn-fH-kuR">
+                                <rect key="frame" x="137" y="518" width="46" height="30"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
+                                <state key="normal" title="Close">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="onCloseTap:" destination="nzN-ba-TD6" eventType="touchUpInside" id="zPB-IT-UZb"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qyQ-sE-Sof" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1351" y="1126"/>
         </scene>
         <!--Home-->
         <scene sceneID="ZeR-aP-Wvi">
             <objects>
-                <viewController title="Home" id="vhh-Wi-VA7" customClass="HomeViewController" customModule="Habits" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Home" id="vhh-Wi-VA7" customClass="HabitsViewController" customModule="Habits" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="bbo-wI-cPU"/>
                         <viewControllerLayoutGuide type="bottom" id="Roh-Vg-hCP"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Vav-1j-BoV">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item 1" id="DfB-Ht-tZp"/>
+                    <navigationItem key="navigationItem" title="Habits" id="csy-eh-1Tm">
+                        <barButtonItem key="rightBarButtonItem" title="Profile" id="2NK-j3-HdS">
+                            <connections>
+                                <segue destination="nzN-ba-TD6" kind="presentation" id="Hrq-g5-y5b"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fd1-ou-NV0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="115" y="86"/>
+            <point key="canvasLocation" x="644" y="88"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="9Bf-4B-ZNU">
+            <objects>
+                <navigationController id="zCf-E8-1of" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="CYd-kc-WrC"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="fva-2g-bHl">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="vhh-Wi-VA7" kind="relationship" relationship="rootViewController" id="tu2-zL-gKW"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DnN-do-eeV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="115" y="88"/>
         </scene>
         <!--Folding Tab Bar Controller-->
         <scene sceneID="J2C-0S-2dZ">
             <objects>
                 <tabBarController id="FIQ-TY-0Pt" customClass="YALFoldingTabBarController" sceneMemberID="viewController">
                     <extendedEdge key="edgesForExtendedLayout" top="YES"/>
+                    <navigationItem key="navigationItem" id="psx-q4-h3s"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
@@ -58,13 +227,18 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="vhh-Wi-VA7" kind="relationship" relationship="viewControllers" id="asw-c1-hmT"/>
-                        <segue destination="jEm-Rw-TRW" kind="relationship" relationship="viewControllers" id="EXo-cS-0Um"/>
+                        <segue destination="zCf-E8-1of" kind="relationship" relationship="viewControllers" id="M4e-5d-nXq"/>
+                        <segue destination="3VZ-pa-YMl" kind="relationship" relationship="viewControllers" id="aDX-nj-xIW"/>
+                        <segue destination="paF-ML-jlb" kind="relationship" relationship="viewControllers" id="00r-nl-TeS"/>
+                        <segue destination="5VT-Ej-Tp3" kind="relationship" relationship="viewControllers" id="EJa-ot-TdM"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5m1-xf-n1N" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-705" y="416"/>
+            <point key="canvasLocation" x="-707" y="1126"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="Hrq-g5-y5b"/>
+    </inferredMetricsTieBreakers>
 </document>

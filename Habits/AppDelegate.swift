@@ -46,13 +46,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func setupTabBar() {
         var tabBarController: YALFoldingTabBarController = window?.rootViewController as!YALFoldingTabBarController
         
-        var leftItem: YALTabBarItem = YALTabBarItem(itemImage: UIImage(named: "like"), leftItemImage: nil, rightItemImage: nil)
-        var rightItem: YALTabBarItem = YALTabBarItem(itemImage: UIImage(named: "like"), leftItemImage: nil, rightItemImage: nil)
+        var habits: YALTabBarItem = YALTabBarItem(itemImage: UIImage(named: "like"), leftItemImage: nil, rightItemImage: nil)
+        var dailyTasks: YALTabBarItem = YALTabBarItem(itemImage: UIImage(named: "like"), leftItemImage: nil, rightItemImage: nil)
+        var toDos: YALTabBarItem = YALTabBarItem(itemImage: UIImage(named: "like"), leftItemImage: nil, rightItemImage: nil)
+        var rewards: YALTabBarItem = YALTabBarItem(itemImage: UIImage(named: "like"), leftItemImage: nil, rightItemImage: nil)
         
         tabBarController.centerButtonImage = UIImage(named: "plus_icon@2x")
         
-        tabBarController.leftBarItems = [leftItem]
-        tabBarController.rightBarItems = [rightItem]
+        tabBarController.leftBarItems = [habits, dailyTasks]
+        tabBarController.rightBarItems = [toDos, rewards]
         
         tabBarController.tabBarViewHeight = YALTabBarViewDefaultHeight
         tabBarController.tabBarView.offsetForExtraTabBarItems = YALForExtraTabBarItemsDefaultOffset
