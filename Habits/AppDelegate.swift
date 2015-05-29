@@ -49,12 +49,12 @@ var window: UIWindow?
     func setupTabBar() {
         var tabBarController: YALFoldingTabBarController = window?.rootViewController as!YALFoldingTabBarController
         
-        var habits: YALTabBarItem = YALTabBarItem(itemImage: UIImage(named: "like"), leftItemImage: UIImage(named: "plus_icon@2x"), rightItemImage: UIImage(named: "plus_icon@2x"))
-        var dailyTasks: YALTabBarItem = YALTabBarItem(itemImage: UIImage(named: "like"), leftItemImage: UIImage(named: "plus_icon@2x"), rightItemImage: UIImage(named: "plus_icon@2x"))
-        var toDos: YALTabBarItem = YALTabBarItem(itemImage: UIImage(named: "like"), leftItemImage: UIImage(named: "plus_icon@2x"), rightItemImage: UIImage(named: "plus_icon@2x"))
-        var rewards: YALTabBarItem = YALTabBarItem(itemImage: UIImage(named: "like"), leftItemImage: UIImage(named: "plus_icon@2x"), rightItemImage: UIImage(named: "plus_icon@2x"))
+        var habits: YALTabBarItem = YALTabBarItem(itemImage: UIImage(named: "habits"), leftItemImage: UIImage(named: "plus_icon@2x"), rightItemImage: UIImage(named: "profile"))
+        var dailyTasks: YALTabBarItem = YALTabBarItem(itemImage: UIImage(named: "daily_tasks"), leftItemImage: UIImage(named: "plus_icon@2x"), rightItemImage: UIImage(named: "profile"))
+        var toDos: YALTabBarItem = YALTabBarItem(itemImage: UIImage(named: "todos"), leftItemImage: UIImage(named: "plus_icon@2x"), rightItemImage: UIImage(named: "profile"))
+        var rewards: YALTabBarItem = YALTabBarItem(itemImage: UIImage(named: "rewards"), leftItemImage: UIImage(named: "plus_icon@2x"), rightItemImage: UIImage(named: "profile"))
         
-        tabBarController.centerButtonImage = UIImage(named: "plus_icon@2x")
+        tabBarController.centerButtonImage = UIImage(named: "menu")
         
         tabBarController.leftBarItems = [habits, dailyTasks]
         tabBarController.rightBarItems = [toDos, rewards]
@@ -63,7 +63,7 @@ var window: UIWindow?
         tabBarController.tabBarViewHeight = YALTabBarViewDefaultHeight
         tabBarController.tabBarView.offsetForExtraTabBarItems = YALForExtraTabBarItemsDefaultOffset
         tabBarController.tabBarView.backgroundColor = UIColor.whiteColor()
-        tabBarController.tabBarView.tabBarColor = UIColor(red: 72/255, green: 211/255, blue: 178/255, alpha: 1)
+        tabBarController.tabBarView.tabBarColor = UIColorFromRGB("5C90FF", alpha: 1)
         tabBarController.tabBarView.tabBarViewEdgeInsets = YALTabBarViewHDefaultEdgeInsets
         tabBarController.tabBarView.tabBarItemsEdgeInsets = YALTabBarViewHDefaultEdgeInsets
     }

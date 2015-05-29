@@ -68,11 +68,11 @@ class HabitsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         cell.name.text = habit.text as? String
         
         if habit.state == 0 {
-            cell.backgroundColor = UIColor.blueColor()
+            cell.backgroundColor = UIColorFromRGB("F5FFA8", alpha: 0.5)
         } else if habit.state == 1 {
-            cell.backgroundColor = UIColor.yellowColor()
+            cell.backgroundColor = UIColorFromRGB("FF8F66", alpha: 0.5)
         } else if habit.state == 2 {
-            cell.backgroundColor = UIColor.greenColor()
+            cell.backgroundColor = UIColorFromRGB("FC3533", alpha: 0.5)
         }
         
         var incButton: IncrementButton = cell.incrementButton as! IncrementButton

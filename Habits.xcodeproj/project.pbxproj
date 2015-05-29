@@ -42,6 +42,13 @@
 		98A87C841B18926700950FE4 /* HabitCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A87C831B18926700950FE4 /* HabitCell.swift */; };
 		98A87C861B189F0E00950FE4 /* IncrementButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A87C851B189F0E00950FE4 /* IncrementButton.swift */; };
 		98A87C881B18DDB600950FE4 /* CreateAHabitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A87C871B18DDB600950FE4 /* CreateAHabitViewController.swift */; };
+		98A87C8A1B18E92E00950FE4 /* ColorUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A87C891B18E92E00950FE4 /* ColorUtils.swift */; };
+		98A87C8E1B18EBD100950FE4 /* profile.png in Resources */ = {isa = PBXBuildFile; fileRef = 98A87C8D1B18EBD100950FE4 /* profile.png */; };
+		98A87C931B18ECCD00950FE4 /* rewards.png in Resources */ = {isa = PBXBuildFile; fileRef = 98A87C8F1B18ECCD00950FE4 /* rewards.png */; };
+		98A87C941B18ECCD00950FE4 /* todos.png in Resources */ = {isa = PBXBuildFile; fileRef = 98A87C901B18ECCD00950FE4 /* todos.png */; };
+		98A87C951B18ECCD00950FE4 /* daily_tasks.png in Resources */ = {isa = PBXBuildFile; fileRef = 98A87C911B18ECCD00950FE4 /* daily_tasks.png */; };
+		98A87C961B18ECCD00950FE4 /* habits.png in Resources */ = {isa = PBXBuildFile; fileRef = 98A87C921B18ECCD00950FE4 /* habits.png */; };
+		98A87C981B18EE5100950FE4 /* menu.png in Resources */ = {isa = PBXBuildFile; fileRef = 98A87C971B18EE5100950FE4 /* menu.png */; };
 		98B91F461B0B8B64006CBD5D /* like.png in Resources */ = {isa = PBXBuildFile; fileRef = 98B91F451B0B8B64006CBD5D /* like.png */; };
 		98B91F481B0B8CCD006CBD5D /* plus_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 98B91F471B0B8CCD006CBD5D /* plus_icon@2x.png */; };
 		B8F3D497E2E053D495A16D0A /* libPods-Habits.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CDF658185FD6FBF992FD8DBA /* libPods-Habits.a */; };
@@ -97,6 +104,13 @@
 		98A87C831B18926700950FE4 /* HabitCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HabitCell.swift; sourceTree = "<group>"; };
 		98A87C851B189F0E00950FE4 /* IncrementButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IncrementButton.swift; sourceTree = "<group>"; };
 		98A87C871B18DDB600950FE4 /* CreateAHabitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateAHabitViewController.swift; sourceTree = "<group>"; };
+		98A87C891B18E92E00950FE4 /* ColorUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorUtils.swift; sourceTree = "<group>"; };
+		98A87C8D1B18EBD100950FE4 /* profile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = profile.png; sourceTree = "<group>"; };
+		98A87C8F1B18ECCD00950FE4 /* rewards.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rewards.png; sourceTree = "<group>"; };
+		98A87C901B18ECCD00950FE4 /* todos.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = todos.png; sourceTree = "<group>"; };
+		98A87C911B18ECCD00950FE4 /* daily_tasks.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = daily_tasks.png; sourceTree = "<group>"; };
+		98A87C921B18ECCD00950FE4 /* habits.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = habits.png; sourceTree = "<group>"; };
+		98A87C971B18EE5100950FE4 /* menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu.png; sourceTree = "<group>"; };
 		98B91F441B0B88C6006CBD5D /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
 		98B91F451B0B8B64006CBD5D /* like.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = like.png; sourceTree = "<group>"; };
 		98B91F471B0B8CCD006CBD5D /* plus_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "plus_icon@2x.png"; sourceTree = "<group>"; };
@@ -214,6 +228,12 @@
 		983C8FAF1AFD17F1004A1435 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				98A87C971B18EE5100950FE4 /* menu.png */,
+				98A87C8F1B18ECCD00950FE4 /* rewards.png */,
+				98A87C901B18ECCD00950FE4 /* todos.png */,
+				98A87C911B18ECCD00950FE4 /* daily_tasks.png */,
+				98A87C921B18ECCD00950FE4 /* habits.png */,
+				98A87C8D1B18EBD100950FE4 /* profile.png */,
 				98B91F471B0B8CCD006CBD5D /* plus_icon@2x.png */,
 				98B91F451B0B8B64006CBD5D /* like.png */,
 				983C8FB01AFD17F1004A1435 /* Info.plist */,
@@ -306,6 +326,7 @@
 				9896D8341B0C689D007F2316 /* Constants.swift */,
 				9817DB731B0E24C000716BE5 /* UserUtils.swift */,
 				9863A8291B0F07320098E17F /* NotificationsUtils.swift */,
+				98A87C891B18E92E00950FE4 /* ColorUtils.swift */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -403,10 +424,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				98B91F481B0B8CCD006CBD5D /* plus_icon@2x.png in Resources */,
+				98A87C8E1B18EBD100950FE4 /* profile.png in Resources */,
 				98B91F461B0B8B64006CBD5D /* like.png in Resources */,
 				983C8FB71AFD17F1004A1435 /* Main.storyboard in Resources */,
+				98A87C951B18ECCD00950FE4 /* daily_tasks.png in Resources */,
 				983C8FBC1AFD17F1004A1435 /* LaunchScreen.xib in Resources */,
+				98A87C941B18ECCD00950FE4 /* todos.png in Resources */,
 				983C8FB91AFD17F1004A1435 /* Images.xcassets in Resources */,
+				98A87C981B18EE5100950FE4 /* menu.png in Resources */,
+				98A87C961B18ECCD00950FE4 /* habits.png in Resources */,
+				98A87C931B18ECCD00950FE4 /* rewards.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -484,6 +511,7 @@
 				9863A83B1B1097640098E17F /* Habit.swift in Sources */,
 				9863A83E1B1097800098E17F /* HabitsList.swift in Sources */,
 				9896D82E1B0C66B0007F2316 /* ApiClient.swift in Sources */,
+				98A87C8A1B18E92E00950FE4 /* ColorUtils.swift in Sources */,
 				9860C4E01B16EB8E00B1758B /* DailyTasksViewController.swift in Sources */,
 				9863A82A1B0F07320098E17F /* NotificationsUtils.swift in Sources */,
 				9896D8351B0C689D007F2316 /* Constants.swift in Sources */,
