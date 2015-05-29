@@ -138,5 +138,9 @@ class HabitsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     func extraLeftItemDidPressed() {
         self.navigationController?.performSegueWithIdentifier("addHabitSegue", sender: self)
     }
+    
+    func extraRightItemDidPressed() {
+        self.tabBarController?.performSegueWithIdentifier("profileSegue", sender: self)
+    }
 }
 

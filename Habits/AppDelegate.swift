@@ -49,10 +49,10 @@ var window: UIWindow?
     func setupTabBar() {
         var tabBarController: YALFoldingTabBarController = window?.rootViewController as!YALFoldingTabBarController
         
-        var habits: YALTabBarItem = YALTabBarItem(itemImage: UIImage(named: "like"), leftItemImage: UIImage(named: "plus_icon@2x"), rightItemImage: nil)
-        var dailyTasks: YALTabBarItem = YALTabBarItem(itemImage: UIImage(named: "like"), leftItemImage: UIImage(named: "plus_icon@2x"), rightItemImage: nil)
-        var toDos: YALTabBarItem = YALTabBarItem(itemImage: UIImage(named: "like"), leftItemImage: UIImage(named: "plus_icon@2x"), rightItemImage: nil)
-        var rewards: YALTabBarItem = YALTabBarItem(itemImage: UIImage(named: "like"), leftItemImage: UIImage(named: "plus_icon@2x"), rightItemImage: nil)
+        var habits: YALTabBarItem = YALTabBarItem(itemImage: UIImage(named: "like"), leftItemImage: UIImage(named: "plus_icon@2x"), rightItemImage: UIImage(named: "plus_icon@2x"))
+        var dailyTasks: YALTabBarItem = YALTabBarItem(itemImage: UIImage(named: "like"), leftItemImage: UIImage(named: "plus_icon@2x"), rightItemImage: UIImage(named: "plus_icon@2x"))
+        var toDos: YALTabBarItem = YALTabBarItem(itemImage: UIImage(named: "like"), leftItemImage: UIImage(named: "plus_icon@2x"), rightItemImage: UIImage(named: "plus_icon@2x"))
+        var rewards: YALTabBarItem = YALTabBarItem(itemImage: UIImage(named: "like"), leftItemImage: UIImage(named: "plus_icon@2x"), rightItemImage: UIImage(named: "plus_icon@2x"))
         
         tabBarController.centerButtonImage = UIImage(named: "plus_icon@2x")
         

@@ -63,4 +63,8 @@ class DailyTasksViewController: UIViewController, YALTabBarViewDelegate {
     func extraLeftItemDidPressedInTabBarView(tabBarView: YALFoldingTabBar!) {
         println("clicked!")
     }
+    
+    func extraRightItemDidPressed() {
+        self.tabBarController?.performSegueWithIdentifier("profileSegue", sender: self)
+    }
 }

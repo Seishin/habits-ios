@@ -8,4 +8,26 @@
 
 class ToDosViewController: UIViewController {
 
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        setupNotifications()
+        initUI()
+    }
+    
+    func setupNotifications() {
+        
+    }
+    
+    func initUI() {
+        
+    }
+    
+    func extraLeftItemDidPressed() {
+        
+    }
+    
+    func extraRightItemDidPressed() {
+        self.tabBarController?.performSegueWithIdentifier("profileSegue", sender: self)
+    }
 }

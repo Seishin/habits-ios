@@ -6,6 +6,28 @@
 //  Copyright (c) 2015 Seishin. All rights reserved.
 //
 
-class RewardsViewController: UIViewController {
+class RewardsViewController: UIViewController, YALTabBarInteracting {
 
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        setupNotifications()
+        initUI()
+    }
+    
+    func setupNotifications() {
+    
+    }
+    
+    func initUI() {
+    
+    }
+    
+    func extraLeftItemDidPressed() {
+        
+    }
+    
+    func extraRightItemDidPressed() {
+        self.tabBarController?.performSegueWithIdentifier("profileSegue", sender: self)
+    }
 }
