@@ -11,8 +11,7 @@ import UIKit
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-    var window: UIWindow?
-
+var window: UIWindow?
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
 
@@ -37,6 +36,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationDidBecomeActive(application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+        
+        if !UserUtils.checkIfUserIsLoggedIn() {
+            window?.rootViewController!.performSegueWithIdentifier("loginSegue", sender: self)
+        }
     }
 
     func applicationWillTerminate(application: UIApplication) {
@@ -46,23 +49,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func setupTabBar() {
         var tabBarController: YALFoldingTabBarController = window?.rootViewController as!YALFoldingTabBarController
         
-        var habits: YALTabBarItem = YALTabBarItem(itemImage: UIImage(named: "like"), leftItemImage: nil, rightItemImage: nil)
-        var dailyTasks: YALTabBarItem = YALTabBarItem(itemImage: UIImage(named: "like"), leftItemImage: nil, rightItemImage: nil)
-        var toDos: YALTabBarItem = YALTabBarItem(itemImage: UIImage(named: "like"), leftItemImage: nil, rightItemImage: nil)
-        var rewards: YALTabBarItem = YALTabBarItem(itemImage: UIImage(named: "like"), leftItemImage: nil, rightItemImage: nil)
+        var habits: YALTabBarItem = YALTabBarItem(itemImage: UIImage(named: "like"), leftItemImage: UIImage(named: "plus_icon@2x"), rightItemImage: nil)
+        var dailyTasks: YALTabBarItem = YALTabBarItem(itemImage: UIImage(named: "like"), leftItemImage: UIImage(named: "plus_icon@2x"), rightItemImage: nil)
+        var toDos: YALTabBarItem = YALTabBarItem(itemImage: UIImage(named: "like"), leftItemImage: UIImage(named: "plus_icon@2x"), rightItemImage: nil)
+        var rewards: YALTabBarItem = YALTabBarItem(itemImage: UIImage(named: "like"), leftItemImage: UIImage(named: "plus_icon@2x"), rightItemImage: nil)
         
         tabBarController.centerButtonImage = UIImage(named: "plus_icon@2x")
         
         tabBarController.leftBarItems = [habits, dailyTasks]
         tabBarController.rightBarItems = [toDos, rewards]
         
+        tabBarController.tabBarView.extraTabBarItemHeight = YALExtraTabBarItemsDefaultHeight
         tabBarController.tabBarViewHeight = YALTabBarViewDefaultHeight
         tabBarController.tabBarView.offsetForExtraTabBarItems = YALForExtraTabBarItemsDefaultOffset
         tabBarController.tabBarView.backgroundColor = UIColor.whiteColor()
         tabBarController.tabBarView.tabBarColor = UIColor(red: 72/255, green: 211/255, blue: 178/255, alpha: 1)
         tabBarController.tabBarView.tabBarViewEdgeInsets = YALTabBarViewHDefaultEdgeInsets
         tabBarController.tabBarView.tabBarItemsEdgeInsets = YALTabBarViewHDefaultEdgeInsets
-        
     }
 }
 

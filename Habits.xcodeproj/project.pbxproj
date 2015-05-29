@@ -37,6 +37,11 @@
 		9896D82E1B0C66B0007F2316 /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9896D82D1B0C66B0007F2316 /* ApiClient.swift */; };
 		9896D8311B0C6715007F2316 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9896D8301B0C6715007F2316 /* User.swift */; };
 		9896D8351B0C689D007F2316 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9896D8341B0C689D007F2316 /* Constants.swift */; };
+		98A87C7F1B18499200950FE4 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A87C7E1B18499200950FE4 /* LoginViewController.swift */; };
+		98A87C811B18557500950FE4 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A87C801B18557500950FE4 /* RegistrationViewController.swift */; };
+		98A87C841B18926700950FE4 /* HabitCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A87C831B18926700950FE4 /* HabitCell.swift */; };
+		98A87C861B189F0E00950FE4 /* IncrementButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A87C851B189F0E00950FE4 /* IncrementButton.swift */; };
+		98A87C881B18DDB600950FE4 /* CreateAHabitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A87C871B18DDB600950FE4 /* CreateAHabitViewController.swift */; };
 		98B91F461B0B8B64006CBD5D /* like.png in Resources */ = {isa = PBXBuildFile; fileRef = 98B91F451B0B8B64006CBD5D /* like.png */; };
 		98B91F481B0B8CCD006CBD5D /* plus_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 98B91F471B0B8CCD006CBD5D /* plus_icon@2x.png */; };
 		B8F3D497E2E053D495A16D0A /* libPods-Habits.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CDF658185FD6FBF992FD8DBA /* libPods-Habits.a */; };
@@ -87,6 +92,11 @@
 		9896D82D1B0C66B0007F2316 /* ApiClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
 		9896D8301B0C6715007F2316 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		9896D8341B0C689D007F2316 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		98A87C7E1B18499200950FE4 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		98A87C801B18557500950FE4 /* RegistrationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
+		98A87C831B18926700950FE4 /* HabitCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HabitCell.swift; sourceTree = "<group>"; };
+		98A87C851B189F0E00950FE4 /* IncrementButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IncrementButton.swift; sourceTree = "<group>"; };
+		98A87C871B18DDB600950FE4 /* CreateAHabitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateAHabitViewController.swift; sourceTree = "<group>"; };
 		98B91F441B0B88C6006CBD5D /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
 		98B91F451B0B8B64006CBD5D /* like.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = like.png; sourceTree = "<group>"; };
 		98B91F471B0B8CCD006CBD5D /* plus_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "plus_icon@2x.png"; sourceTree = "<group>"; };
@@ -157,6 +167,9 @@
 				9860C4DD1B16EA6000B1758B /* ProfileViewController.swift */,
 				9860C4DF1B16EB8E00B1758B /* DailyTasksViewController.swift */,
 				9860C4E11B16EBAD00B1758B /* ToDosViewController.swift */,
+				98A87C7E1B18499200950FE4 /* LoginViewController.swift */,
+				98A87C801B18557500950FE4 /* RegistrationViewController.swift */,
+				98A87C871B18DDB600950FE4 /* CreateAHabitViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -187,6 +200,7 @@
 				9896D82C1B0C66A2007F2316 /* Network */,
 				9896D8361B0C68A2007F2316 /* Utils */,
 				9817DB751B0E301D00716BE5 /* Controllers */,
+				98A87C821B18924500950FE4 /* UI */,
 				983C8FB11AFD17F1004A1435 /* AppDelegate.swift */,
 				983C8FB51AFD17F1004A1435 /* Main.storyboard */,
 				983C8FB81AFD17F1004A1435 /* Images.xcassets */,
@@ -294,6 +308,15 @@
 				9863A8291B0F07320098E17F /* NotificationsUtils.swift */,
 			);
 			name = Utils;
+			sourceTree = "<group>";
+		};
+		98A87C821B18924500950FE4 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				98A87C831B18926700950FE4 /* HabitCell.swift */,
+				98A87C851B189F0E00950FE4 /* IncrementButton.swift */,
+			);
+			name = UI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -434,11 +457,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				98A87C7F1B18499200950FE4 /* LoginViewController.swift in Sources */,
 				9860C4E21B16EBAD00B1758B /* ToDosViewController.swift in Sources */,
 				9860C4E41B16EBC800B1758B /* RewardsViewController.swift in Sources */,
+				98A87C841B18926700950FE4 /* HabitCell.swift in Sources */,
 				9817DB741B0E24C000716BE5 /* UserUtils.swift in Sources */,
+				98A87C861B189F0E00950FE4 /* IncrementButton.swift in Sources */,
 				9800DD241B11FD7700BE361C /* RewardsApi.swift in Sources */,
 				9800DD221B11FD4D00BE361C /* RewardsList.swift in Sources */,
+				98A87C881B18DDB600950FE4 /* CreateAHabitViewController.swift in Sources */,
 				9896D8311B0C6715007F2316 /* User.swift in Sources */,
 				9863A8281B0F03BF0098E17F /* UsersApi.swift in Sources */,
 				983C8FB41AFD17F1004A1435 /* HabitsViewController.swift in Sources */,
@@ -451,6 +478,7 @@
 				9863A8351B0F48C70098E17F /* DailyTask.swift in Sources */,
 				9800DD1B1B11C17100BE361C /* ToDosList.swift in Sources */,
 				9863A82C1B0F14400098E17F /* UserStats.swift in Sources */,
+				98A87C811B18557500950FE4 /* RegistrationViewController.swift in Sources */,
 				9860C4DE1B16EA6000B1758B /* ProfileViewController.swift in Sources */,
 				9800DD191B11C13A00BE361C /* ToDo.swift in Sources */,
 				9863A83B1B1097640098E17F /* Habit.swift in Sources */,

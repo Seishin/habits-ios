@@ -4,6 +4,7 @@
 target 'Habits' do
 pod 'FoldingTabBar'
 pod 'JSONModel'
+pod 'IQKeyboardManager'
 end
 
 target 'HabitsTests' do

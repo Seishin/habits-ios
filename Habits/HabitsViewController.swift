@@ -8,118 +8,135 @@
 
 import UIKit
 
-class HabitsViewController: UIViewController {
+class HabitsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, YALTabBarInteracting {
 
+    @IBOutlet weak var habitsTable: UITableView!
+    
+    private var habits: [Habit] = [Habit]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setupNotifications()
-        
-        var user: User = User()
-        user.email = "test10"
-        user.password = "test"
-        user.name = "test"
-        
-//        ApiClient.getUsersApi().createUser(user)
-        ApiClient.getUsersApi().loginUser(user)
-        
-//        println(UserUtils.getUserProfile())
-        
-//        ApiClient.getUsersApi().getUserById("555ed5f92fe0280300a9d1b0", onComplete: { (user) -> Void in
-//            println(user)
-//        })
-        
-//        ApiClient.getUserStatsApi().getStats(UserUtils.getUserProfile()!)
-        
+        initUI()
     }
     
     func setupNotifications() {
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "onUserCreationSuccess:", name: notifUserCreationSuccess, object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "onUserLoginSuccess:", name: notifUserLoginSuccess, object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "onUserStatsGetSuccess:", name: notifUserStatsGetSuccess, object: nil)
-        
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "onDailyTasksListGetSuccess:", name: notifDailyTasksListGetSuccess, object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "onDailyTaskGetSuccess:", name: notifDailyTaskGetSuccess, object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "onDailyTaskChangeStateSuccess:", name: notifDailyTaskChangeStateSuccess, object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "onDailyTaskRemove:", name: notifDailyTaskRemove, object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "onDailyTaskCreateSuccess:", name: notifDailyTaskCreateSuccess, object: nil)
-        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "onHabitsObtainSuccess:", name: notifHabitsListGetSuccess, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "onHabitCreateSuccess:", name: notifHabitCreateSuccess, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "onHabitIncrementSuccess:", name: notifHabitIncrementSuccess, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "onHabitRemoveSuccess:", name: notifHabitRemoveSuccess, object: nil)
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "onFailure:", name: notifFailure, object: nil)
     }
+    
+    func initUI() {
+        habitsTable.delegate = self
+        habitsTable.dataSource = self
+        habitsTable.allowsMultipleSelectionDuringEditing = false
+        
+        if UserUtils.checkIfUserIsLoggedIn() {
+            ApiClient.getHabitsApi().getHabitsList(UserUtils.getUserProfile()!)
+        }
+    }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-    func onUserCreationSuccess(notification: NSNotification) {
-        println(notification)
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 1
     }
     
-    func onUserLoginSuccess(notification: NSNotification) {
-//        let habit: Habit = Habit()
-//        habit.text = "Bla"
-        
-//        ApiClient.getHabitsApi().createHabit(UserUtils.getUserProfile()!, habit: habit)
-//        ApiClient.getHabitsApi().getHabit(UserUtils.getUserProfile()!, id: "5560661bc9a83d0300133185")
-//        ApiClient.getHabitsApi().getHabitsList(UserUtils.getUserProfile()!)
-//        ApiClient.getHabitsApi().removeHabit(UserUtils.getUserProfile()!, id: "5560661bc9a83d0300133185")
-//        ApiClient.getHabitsApi().incrementHabit(UserUtils.getUserProfile()!, id: "556075b761515c900ff528fd")
-        
-        var reward: Reward = Reward()
-        reward.text = "test"
-        reward.gold = 30
-        
-//        ApiClient.getRewardsApi().createReward(UserUtils.getUserProfile()!, reward: reward)
-//        ApiClient.getRewardsApi().getAllRewards(UserUtils.getUserProfile()!)
-//        ApiClient.getRewardsApi().getReward(UserUtils.getUserProfile()!, id: "55634aea01d8248123ad9f0c")
-        ApiClient.getRewardsApi().buyReward(UserUtils.getUserProfile()!, id: "55634aea01d8248123ad9f0c")
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return habits.count
     }
     
-    func onUserStatsGetSuccess(notification: NSNotification) {
-        println((notification.object as! UserStats).maxLvlExp)
+    func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        return true
     }
     
-    func onDailyTasksListGetSuccess(notification: NSNotification) {
-//        println(notification)
-        let tasks: DailyTasksList = notification.object as! DailyTasksList
+    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         
-        for var i = 0; i < tasks.dailyTasks.count; i++ {
-            println(tasks.dailyTasks.objectAtIndex(i))
+        if editingStyle == UITableViewCellEditingStyle.Delete {
+            var habit: Habit = habits[indexPath.row]
+            ApiClient.getHabitsApi().removeHabit(UserUtils.getUserProfile()!, id: habit.id as String)
         }
     }
     
-    func onDailyTaskCreateSuccess(notification: NSNotification) {
-        println(notification)
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell: HabitCell = tableView.dequeueReusableCellWithIdentifier("habits_cell") as! HabitCell
+        
+        var habit: Habit = habits[indexPath.row] as Habit
+        
+        cell.name.text = habit.text as? String
+        
+        if habit.state == 0 {
+            cell.backgroundColor = UIColor.blueColor()
+        } else if habit.state == 1 {
+            cell.backgroundColor = UIColor.yellowColor()
+        } else if habit.state == 2 {
+            cell.backgroundColor = UIColor.greenColor()
+        }
+        
+        var incButton: IncrementButton = cell.incrementButton as! IncrementButton
+        incButton.setId(habit.id as! String)
+        incButton.addTarget(self, action: "onIncrement:", forControlEvents: UIControlEvents.TouchDown)
+        
+        return cell
     }
     
-    func onDailyTaskGetSuccess(notification: NSNotification) {
-        println(notification.object)
+    func onHabitsObtainSuccess(notification: NSNotification) {
+        let habits: HabitsList = notification.object as! HabitsList
+        
+        for habit in habits.habitsList {
+            self.habits.append(habit as! Habit)
+        }
+        
+        self.habitsTable.reloadData()
     }
-    
-    func onDailyTaskChangeStateSuccess(notification: NSNotification) {
-        println(notification)
-    }
-    
-    func onDailyTaskRemove(notification: NSNotification) {
-        println(notification)
-    }
-    
     
     func onHabitCreateSuccess(notification: NSNotification) {
-        println(notification.object)
+        var habit: Habit = notification.object as! Habit
+        self.habits.insert(habit, atIndex: 0)
+        
+        self.habitsTable.beginUpdates()
+        var indexPath: NSIndexPath = NSIndexPath(forRow: 0, inSection: 0)
+        self.habitsTable.insertRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Top)
+        self.habitsTable.endUpdates()
     }
     
     func onHabitIncrementSuccess(notification: NSNotification) {
-        println(notification.object)
+        var habit: Habit = notification.object as! Habit
+        
+        for var i = 0; i < self.habits.count; i++ {
+            if habits[i].id == habit.id {
+                habits[i].state = habit.state
+            }
+        }
+        
+        self.habitsTable.reloadData()
     }
     
+    func onHabitRemoveSuccess(notification: NSNotification) {
+        let id: String = notification.object?.valueForKey("id") as! String
+        
+        for var i = 0; i < habits.count; i++ {
+            if habits[i].id == id {
+                habits.removeAtIndex(i)
+                break
+            }
+        }
+        
+        self.habitsTable.reloadData()
+    }
     
     func onFailure(notification: NSNotification) {
         println(notification)
+    }
+    
+    func onIncrement(object: AnyObject) {
+        (object as! IncrementButton).performIncrementAction()
+    }
+    
+    func extraLeftItemDidPressed() {
+        self.navigationController?.performSegueWithIdentifier("addHabitSegue", sender: self)
     }
 }
 

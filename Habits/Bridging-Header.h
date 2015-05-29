@@ -10,4 +10,5 @@
 #import <FoldingTabBar/YALTabBarItem.h>
 #import <FoldingTabBar/YALFoldingTabBarController.h>
 #import <FoldingTabBar/YALAnimatingTabBarConstants.h>
+#import <FoldingTabBar/YALTabBarInteracting.h>
 #import <JSONModel/JSONModel+networking.h>
