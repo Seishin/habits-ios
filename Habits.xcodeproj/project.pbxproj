@@ -14,6 +14,7 @@
 		9800DD221B11FD4D00BE361C /* RewardsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9800DD211B11FD4D00BE361C /* RewardsList.swift */; };
 		9800DD241B11FD7700BE361C /* RewardsApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9800DD231B11FD7700BE361C /* RewardsApi.swift */; };
 		98114CFE1B19183500F716A4 /* RewardBuyButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98114CFD1B19183500F716A4 /* RewardBuyButton.swift */; };
+		98114D001B19205A00F716A4 /* ImageUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98114CFF1B19205A00F716A4 /* ImageUtils.swift */; };
 		9817DB741B0E24C000716BE5 /* UserUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9817DB731B0E24C000716BE5 /* UserUtils.swift */; };
 		983C8FB21AFD17F1004A1435 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983C8FB11AFD17F1004A1435 /* AppDelegate.swift */; };
 		983C8FB41AFD17F1004A1435 /* HabitsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983C8FB31AFD17F1004A1435 /* HabitsViewController.swift */; };
@@ -81,6 +82,7 @@
 		9800DD211B11FD4D00BE361C /* RewardsList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RewardsList.swift; sourceTree = "<group>"; };
 		9800DD231B11FD7700BE361C /* RewardsApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RewardsApi.swift; sourceTree = "<group>"; };
 		98114CFD1B19183500F716A4 /* RewardBuyButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RewardBuyButton.swift; sourceTree = "<group>"; };
+		98114CFF1B19205A00F716A4 /* ImageUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageUtils.swift; sourceTree = "<group>"; };
 		9817DB731B0E24C000716BE5 /* UserUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserUtils.swift; sourceTree = "<group>"; };
 		983C8FAC1AFD17F1004A1435 /* Habits.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Habits.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		983C8FB01AFD17F1004A1435 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -348,6 +350,7 @@
 				9817DB731B0E24C000716BE5 /* UserUtils.swift */,
 				9863A8291B0F07320098E17F /* NotificationsUtils.swift */,
 				98A87C891B18E92E00950FE4 /* ColorUtils.swift */,
+				98114CFF1B19205A00F716A4 /* ImageUtils.swift */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -552,6 +555,7 @@
 				9896D8351B0C689D007F2316 /* Constants.swift in Sources */,
 				9863A8411B1098530098E17F /* HabitsApi.swift in Sources */,
 				98C630681B19105E00ACA140 /* CreateARewardViewController.swift in Sources */,
+				98114D001B19205A00F716A4 /* ImageUtils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

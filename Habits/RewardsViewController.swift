@@ -25,6 +25,8 @@ class RewardsViewController: UIViewController, UITableViewDelegate, UITableViewD
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "onRewardBuySuccess:", name: notifRewardBuySuccess, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "onRewardRemoveSuccess:", name: notifRewardRemoveSuccess, object: nil)
         
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "onUserLoginSuccess", name: notifUserLoginSuccess, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "onUserCreateSuccess", name: notifUserCreationSuccess, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "onFailure:", name: notifFailure, object: nil)
     }
     
@@ -119,6 +121,30 @@ class RewardsViewController: UIViewController, UITableViewDelegate, UITableViewD
     func onBuy(object: AnyObject) {
         var button: RewardBuyButton = object as! RewardBuyButton
         button.buyReward()
+    }
+    
+    func onFailure(notification: NSNotification) {
+        var alertView: UIAlertView = UIAlertView()
+        alertView.message = (notification.object as! NSDictionary).valueForKey("reason") as? String
+        alertView.addButtonWithTitle("Dismiss")
+        
+        alertView.show()
+    }
+    
+    func onUserCreateSuccess() {
+        self.rewards = [Reward]()
+        ApiClient.getRewardsApi().getAllRewards(UserUtils.getUserProfile()!)
+    }
+    
+    func onUserLoginSuccess() {
+        self.rewards = [Reward]()
+        ApiClient.getRewardsApi().getAllRewards(UserUtils.getUserProfile()!)
+    }
+    
+    func onUserLogoutSuccess() {
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(0.5 * Double(NSEC_PER_SEC))), dispatch_get_main_queue()) { () -> Void in
+            self.tabBarController?.performSegueWithIdentifier("loginSegue", sender: self)
+        }
     }
     
     func extraLeftItemDidPressed() {

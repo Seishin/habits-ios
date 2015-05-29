@@ -16,6 +16,7 @@ let kUserName: String = "name"
 let kUserEmail: String = "email"
 let kUserToken: String = "token"
 let kUserStats: String = "stats"
+let kUserProfileImage: String = "profile_image"
 
 // Notification Keys
 let notifFailure = "notif_failure"

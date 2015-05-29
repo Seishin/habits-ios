@@ -6,6 +6,8 @@
 //  Copyright (c) 2015 Seishin. All rights reserved.
 //
 
+let notifUserLogoutSuccess = "notif_user_logout_success"
+
 struct UserUtils {
     
     private static var userDefaults: NSUserDefaults = NSUserDefaults()
@@ -16,6 +18,7 @@ struct UserUtils {
         self.userDefaults.setValue(user.name, forKey: kUserName)
         self.userDefaults.setValue(user.token, forKey: kUserToken)
         self.userDefaults.setValue(user.stats, forKey: kUserStats)
+        self.userDefaults.setValue(user.profileImage, forKey: kUserProfileImage)
         
         onComplete()
     }
@@ -28,6 +31,7 @@ struct UserUtils {
             user.email = userDefaults.valueForKey(kUserEmail) as! String
             user.token = userDefaults.valueForKey(kUserToken) as! String
             user.stats = userDefaults.valueForKey(kUserStats) as? String
+            user.profileImage = userDefaults.valueForKey(kUserProfileImage) as! String
             
             return user;
         }
@@ -40,6 +44,9 @@ struct UserUtils {
         self.userDefaults.removeObjectForKey(kUserEmail)
         self.userDefaults.removeObjectForKey(kUserName)
         self.userDefaults.removeObjectForKey(kUserToken)
+        self.userDefaults.removeObjectForKey(kUserProfileImage)
+        
+        NSNotificationCenter.defaultCenter().postNotificationName(notifUserLogoutSuccess, object: nil)
     }
     
     static func checkIfUserIsLoggedIn() -> Bool {

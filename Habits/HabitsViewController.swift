@@ -26,7 +26,10 @@ class HabitsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "onHabitCreateSuccess:", name: notifHabitCreateSuccess, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "onHabitIncrementSuccess:", name: notifHabitIncrementSuccess, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "onHabitRemoveSuccess:", name: notifHabitRemoveSuccess, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "onUserLogoutSuccess", name: notifUserLogoutSuccess, object: nil)
         
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "onUserLoginSuccess", name: notifUserLoginSuccess, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "onUserCreateSuccess", name: notifUserCreationSuccess, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "onFailure:", name: notifFailure, object: nil)
     }
     
@@ -128,11 +131,31 @@ class HabitsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     func onFailure(notification: NSNotification) {
-        println(notification)
+        var alertView: UIAlertView = UIAlertView()
+        alertView.message = (notification.object as! NSDictionary).valueForKey("reason") as? String
+        alertView.addButtonWithTitle("Dismiss")
+        
+        alertView.show()
     }
     
     func onIncrement(object: AnyObject) {
         (object as! IncrementButton).performIncrementAction()
+    }
+    
+    func onUserCreateSuccess() {
+        self.habits = [Habit]()
+        ApiClient.getHabitsApi().getHabitsList(UserUtils.getUserProfile()!)
+    }
+    
+    func onUserLoginSuccess() {
+        self.habits = [Habit]()
+        ApiClient.getHabitsApi().getHabitsList(UserUtils.getUserProfile()!)
+    }
+    
+    func onUserLogoutSuccess() {
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(0.5 * Double(NSEC_PER_SEC))), dispatch_get_main_queue()) { () -> Void in
+            self.tabBarController?.performSegueWithIdentifier("loginSegue", sender: self)
+        }
     }
     
     func extraLeftItemDidPressed() {

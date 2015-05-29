@@ -26,6 +26,8 @@ class ToDosViewController: UIViewController, UITableViewDelegate, UITableViewDat
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "onToDoChangeSuccess:", name: notifToDoChangeStateSuccess, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "onToDoRemoveSuccess:", name: notifToDoRemoveSuccess, object: nil)
         
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "onUserLoginSuccess", name: notifUserLoginSuccess, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "onUserCreateSuccess", name: notifUserCreationSuccess, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "onFailure:", name: notifFailure, object: nil)
     }
     
@@ -129,7 +131,11 @@ class ToDosViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     func onFailure(notification: NSNotification) {
-        println(notification)
+        var alertView: UIAlertView = UIAlertView()
+        alertView.message = (notification.object as! NSDictionary).valueForKey("reason") as? String
+        alertView.addButtonWithTitle("Dismiss")
+        
+        alertView.show()
     }
     
     func onStateChange(object: AnyObject) {
@@ -137,6 +143,16 @@ class ToDosViewController: UIViewController, UITableViewDelegate, UITableViewDat
         stateSwitch.changeState()
         
         self.toDosTable.reloadData()
+    }
+    
+    func onUserCreateSuccess() {
+        self.toDos = [ToDo]()
+        ApiClient.getToDosApi().getToDosList(UserUtils.getUserProfile()!)
+    }
+    
+    func onUserLoginSuccess() {
+        self.toDos = [ToDo]()
+        ApiClient.getToDosApi().getToDosList(UserUtils.getUserProfile()!)
     }
     
     func extraLeftItemDidPressed() {

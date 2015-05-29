@@ -5,6 +5,8 @@ target 'Habits' do
 pod 'FoldingTabBar'
 pod 'JSONModel'
 pod 'IQKeyboardManager'
+pod 'SDWebImage'
+pod 'RJImageLoader'
 end
 
 target 'HabitsTests' do

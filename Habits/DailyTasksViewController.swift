@@ -26,6 +26,8 @@ class DailyTasksViewController: UIViewController, UITableViewDataSource, UITable
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "onDailyTaskChangeSuccess:", name: notifDailyTaskChangeStateSuccess, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "onDailyTaskRemoveSuccess:", name: notifDailyTaskRemove, object: nil)
         
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "onUserLoginSuccess", name: notifUserLoginSuccess, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "onUserCreateSuccess", name: notifUserCreationSuccess, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "onFailure:", name: notifFailure, object: nil)
     }
     
@@ -129,7 +131,11 @@ class DailyTasksViewController: UIViewController, UITableViewDataSource, UITable
     }
     
     func onFailure(notification: NSNotification) {
-        println(notification)
+        var alertView: UIAlertView = UIAlertView()
+        alertView.message = (notification.object as! NSDictionary).valueForKey("reason") as? String
+        alertView.addButtonWithTitle("Dismiss")
+        
+        alertView.show()
     }
     
     func onStateChange(object: AnyObject) {
@@ -137,6 +143,22 @@ class DailyTasksViewController: UIViewController, UITableViewDataSource, UITable
         stateSwitch.changeState()
         
         self.dailyTasksTable.reloadData()
+    }
+    
+    func onUserCreateSuccess() {
+        self.dailyTasks = [DailyTask]()
+        ApiClient.getDailyTasksApi().getDailyTasks(UserUtils.getUserProfile()!)
+    }
+    
+    func onUserLoginSuccess() {
+        self.dailyTasks = [DailyTask]()
+        ApiClient.getDailyTasksApi().getDailyTasks(UserUtils.getUserProfile()!)
+    }
+    
+    func onUserLogoutSuccess() {
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(0.5 * Double(NSEC_PER_SEC))), dispatch_get_main_queue()) { () -> Void in
+            self.tabBarController?.performSegueWithIdentifier("loginSegue", sender: self)
+        }
     }
     
     func extraLeftItemDidPressed() {

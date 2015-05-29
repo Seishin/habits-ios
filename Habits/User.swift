@@ -13,4 +13,5 @@ class User: JSONModel {
     var name: NSString!
     var token: NSString!
     var stats: NSString!
+    var profileImage: NSString = "http://www.pandatour.com.cn/images/e-02-0731-panda1.jpg"
 }
