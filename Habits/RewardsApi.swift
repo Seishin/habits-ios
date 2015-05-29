@@ -70,7 +70,7 @@ class RewardsApi {
     }
     
     func removeReward(user: User, id: String) {
-        let url: String = rewardsBaseUrl + id + "?userId=" + String(user.id)
+        let url: String = rewardsBaseUrl + id + "/?userId=" + String(user.id)
         
         JSONHTTPClient.JSONFromURLWithString(url, method: "DELETE", params: nil, orBodyData: nil, headers: ["Authorization" : user.token]) { (response: AnyObject!, error: JSONModelError!) -> Void in
             
@@ -117,13 +117,7 @@ class RewardsApi {
         var rewardsList: RewardsList = RewardsList()
         
         for item in rewards {
-            var reward: Reward = Reward()
-            reward.id = data.valueForKey("_id") as! String
-            reward.userId = data.valueForKey("user") as! String
-            reward.text = data.valueForKey("text") as! String
-            reward.gold = data.valueForKey("gold") as! Int
-            
-            rewardsList.rewardsList.addObject(reward)
+            rewardsList.rewardsList.addObject(getRewardObjectFromResponse(item)!)
         }
         
         return rewardsList

@@ -11,13 +11,12 @@ let notifToDoCreateSuccess = "notif_todo_create_success"
 let notifToDoGetSuccess = "notif_todo_get_success"
 let notifToDosListGetSuccess = "notif_todos_list_get_success"
 let notifToDoRemoveSuccess = "notif_todo_remove_success"
-let notifToDoCheckSuccess = "notif_todo_check_success"
-let notifToDoUncheckSuccess = "notif_todo_uncheck_success"
+let notifToDoChangeStateSuccess = "notif_todo_change_state_success"
 
 class ToDosApi {
     
     private static let instance: ToDosApi = ToDosApi()
-    private let toDoBaseUrl: String = baseUrl + "todos/"
+    private let toDoBaseUrl: String = baseUrl + "/todos/"
     
     static func getInstance() -> ToDosApi {
         return instance
@@ -26,8 +25,10 @@ class ToDosApi {
     init() {}
     
     func createToDo(user: User, toDo: ToDo) {
+        let url: String = toDoBaseUrl + "?userId=" + String(user.id)
+        
         JSONHTTPClient.requestHeaders().setValue(user.token, forKey: "Authorization")
-        JSONHTTPClient.postJSONFromURLWithString(toDoBaseUrl, bodyData: toDo.toJSONData()) { (response: AnyObject!, error: JSONModelError!) -> Void in
+        JSONHTTPClient.postJSONFromURLWithString(url, bodyData: toDo.toJSONData()) { (response: AnyObject!, error: JSONModelError!) -> Void in
             
             if (error != nil) {
                 NotificationsUtils.sendFailureNotification("Cannot create this to do.")
@@ -39,10 +40,10 @@ class ToDosApi {
     }
     
     func getToDo(user: User, id: String) {
-        let url: String = toDoBaseUrl + id + "/"
+        let url: String = toDoBaseUrl + id + "/?userId=" + String(user.id)
         
         JSONHTTPClient.requestHeaders().setValue(user.token, forKey: "Authorization")
-        JSONHTTPClient.getJSONFromURLWithString(toDoBaseUrl, params: ["userId": user.id], completion: { (response: AnyObject!, error: JSONModelError!) -> Void in
+        JSONHTTPClient.getJSONFromURLWithString(toDoBaseUrl, params: nil, completion: { (response: AnyObject!, error: JSONModelError!) -> Void in
             
             if (error != nil) {
                 NotificationsUtils.sendFailureNotification("Cannot get this ToDo.")
@@ -92,7 +93,7 @@ class ToDosApi {
                 NotificationsUtils.sendFailureNotification("Cannot check ToDo.")
             } else {
                 let toDo: ToDo = self.getToDoObjectFromResponse(response)!
-                NotificationsUtils.sendNotificaiton(notifToDoCheckSuccess, object: toDo)
+                NotificationsUtils.sendNotificaiton(notifToDoChangeStateSuccess, object: toDo)
             }
         }
     }
@@ -107,7 +108,7 @@ class ToDosApi {
                 NotificationsUtils.sendFailureNotification("Cannot uncheck ToDo.")
             } else {
                 let toDo: ToDo = self.getToDoObjectFromResponse(response)!
-                NotificationsUtils.sendNotificaiton(notifToDoUncheckSuccess, object: toDo)
+                NotificationsUtils.sendNotificaiton(notifToDoChangeStateSuccess, object: toDo)
             }
         }
     }

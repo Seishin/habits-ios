@@ -13,6 +13,7 @@
 		9800DD201B11FCF700BE361C /* Reward.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9800DD1F1B11FCF700BE361C /* Reward.swift */; };
 		9800DD221B11FD4D00BE361C /* RewardsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9800DD211B11FD4D00BE361C /* RewardsList.swift */; };
 		9800DD241B11FD7700BE361C /* RewardsApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9800DD231B11FD7700BE361C /* RewardsApi.swift */; };
+		98114CFE1B19183500F716A4 /* RewardBuyButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98114CFD1B19183500F716A4 /* RewardBuyButton.swift */; };
 		9817DB741B0E24C000716BE5 /* UserUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9817DB731B0E24C000716BE5 /* UserUtils.swift */; };
 		983C8FB21AFD17F1004A1435 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983C8FB11AFD17F1004A1435 /* AppDelegate.swift */; };
 		983C8FB41AFD17F1004A1435 /* HabitsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983C8FB31AFD17F1004A1435 /* HabitsViewController.swift */; };
@@ -54,6 +55,11 @@
 		98B91F481B0B8CCD006CBD5D /* plus_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 98B91F471B0B8CCD006CBD5D /* plus_icon@2x.png */; };
 		98C6305E1B18F61600ACA140 /* StateChangeSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98C6305D1B18F61600ACA140 /* StateChangeSwitch.swift */; };
 		98C630601B19019000ACA140 /* CreateADailyTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98C6305F1B19019000ACA140 /* CreateADailyTaskViewController.swift */; };
+		98C630621B1906AB00ACA140 /* ToDoStateChangeSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98C630611B1906AB00ACA140 /* ToDoStateChangeSwitch.swift */; };
+		98C630641B190A2800ACA140 /* CreateAToDoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98C630631B190A2800ACA140 /* CreateAToDoViewController.swift */; };
+		98C630661B190D3000ACA140 /* ToDoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98C630651B190D3000ACA140 /* ToDoCell.swift */; };
+		98C630681B19105E00ACA140 /* CreateARewardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98C630671B19105E00ACA140 /* CreateARewardViewController.swift */; };
+		98C6306A1B1913C700ACA140 /* RewardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98C630691B1913C700ACA140 /* RewardCell.swift */; };
 		B8F3D497E2E053D495A16D0A /* libPods-Habits.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CDF658185FD6FBF992FD8DBA /* libPods-Habits.a */; };
 /* End PBXBuildFile section */
 
@@ -74,6 +80,7 @@
 		9800DD1F1B11FCF700BE361C /* Reward.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reward.swift; sourceTree = "<group>"; };
 		9800DD211B11FD4D00BE361C /* RewardsList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RewardsList.swift; sourceTree = "<group>"; };
 		9800DD231B11FD7700BE361C /* RewardsApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RewardsApi.swift; sourceTree = "<group>"; };
+		98114CFD1B19183500F716A4 /* RewardBuyButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RewardBuyButton.swift; sourceTree = "<group>"; };
 		9817DB731B0E24C000716BE5 /* UserUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserUtils.swift; sourceTree = "<group>"; };
 		983C8FAC1AFD17F1004A1435 /* Habits.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Habits.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		983C8FB01AFD17F1004A1435 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -120,6 +127,11 @@
 		98B91F471B0B8CCD006CBD5D /* plus_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "plus_icon@2x.png"; sourceTree = "<group>"; };
 		98C6305D1B18F61600ACA140 /* StateChangeSwitch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StateChangeSwitch.swift; sourceTree = "<group>"; };
 		98C6305F1B19019000ACA140 /* CreateADailyTaskViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateADailyTaskViewController.swift; sourceTree = "<group>"; };
+		98C630611B1906AB00ACA140 /* ToDoStateChangeSwitch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDoStateChangeSwitch.swift; sourceTree = "<group>"; };
+		98C630631B190A2800ACA140 /* CreateAToDoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateAToDoViewController.swift; sourceTree = "<group>"; };
+		98C630651B190D3000ACA140 /* ToDoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDoCell.swift; sourceTree = "<group>"; };
+		98C630671B19105E00ACA140 /* CreateARewardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateARewardViewController.swift; sourceTree = "<group>"; };
+		98C630691B1913C700ACA140 /* RewardCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RewardCell.swift; sourceTree = "<group>"; };
 		BBAFD10E2FC64EB07C943DF4 /* Pods-Habits.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Habits.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Habits/Pods-Habits.debug.xcconfig"; sourceTree = "<group>"; };
 		CDF658185FD6FBF992FD8DBA /* libPods-Habits.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Habits.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F21CF8CEE318EE194FCF7389 /* Pods-Habits.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Habits.release.xcconfig"; path = "Pods/Target Support Files/Pods-Habits/Pods-Habits.release.xcconfig"; sourceTree = "<group>"; };
@@ -191,6 +203,8 @@
 				98A87C801B18557500950FE4 /* RegistrationViewController.swift */,
 				98A87C871B18DDB600950FE4 /* CreateAHabitViewController.swift */,
 				98C6305F1B19019000ACA140 /* CreateADailyTaskViewController.swift */,
+				98C630631B190A2800ACA140 /* CreateAToDoViewController.swift */,
+				98C630671B19105E00ACA140 /* CreateARewardViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -345,6 +359,10 @@
 				98A87C851B189F0E00950FE4 /* IncrementButton.swift */,
 				98A87C991B18F1A100950FE4 /* DailyTaskCell.swift */,
 				98C6305D1B18F61600ACA140 /* StateChangeSwitch.swift */,
+				98C630611B1906AB00ACA140 /* ToDoStateChangeSwitch.swift */,
+				98C630651B190D3000ACA140 /* ToDoCell.swift */,
+				98C630691B1913C700ACA140 /* RewardCell.swift */,
+				98114CFD1B19183500F716A4 /* RewardBuyButton.swift */,
 			);
 			name = UI;
 			sourceTree = "<group>";
@@ -500,6 +518,7 @@
 				98A87C9A1B18F1A100950FE4 /* DailyTaskCell.swift in Sources */,
 				9817DB741B0E24C000716BE5 /* UserUtils.swift in Sources */,
 				98A87C861B189F0E00950FE4 /* IncrementButton.swift in Sources */,
+				98C630661B190D3000ACA140 /* ToDoCell.swift in Sources */,
 				9800DD241B11FD7700BE361C /* RewardsApi.swift in Sources */,
 				98C630601B19019000ACA140 /* CreateADailyTaskViewController.swift in Sources */,
 				9800DD221B11FD4D00BE361C /* RewardsList.swift in Sources */,
@@ -510,10 +529,14 @@
 				9800DD201B11FCF700BE361C /* Reward.swift in Sources */,
 				9800DD1D1B11C1A300BE361C /* ToDosApi.swift in Sources */,
 				9863A8391B0F49CD0098E17F /* DailyTasksApi.swift in Sources */,
+				98C630641B190A2800ACA140 /* CreateAToDoViewController.swift in Sources */,
 				9863A8371B0F49020098E17F /* DailyTasksList.swift in Sources */,
+				98114CFE1B19183500F716A4 /* RewardBuyButton.swift in Sources */,
 				983C8FB21AFD17F1004A1435 /* AppDelegate.swift in Sources */,
 				9863A82E1B0F1AB10098E17F /* UserStatsApi.swift in Sources */,
 				9863A8351B0F48C70098E17F /* DailyTask.swift in Sources */,
+				98C630621B1906AB00ACA140 /* ToDoStateChangeSwitch.swift in Sources */,
+				98C6306A1B1913C700ACA140 /* RewardCell.swift in Sources */,
 				9800DD1B1B11C17100BE361C /* ToDosList.swift in Sources */,
 				9863A82C1B0F14400098E17F /* UserStats.swift in Sources */,
 				98A87C811B18557500950FE4 /* RegistrationViewController.swift in Sources */,
@@ -528,6 +551,7 @@
 				98C6305E1B18F61600ACA140 /* StateChangeSwitch.swift in Sources */,
 				9896D8351B0C689D007F2316 /* Constants.swift in Sources */,
 				9863A8411B1098530098E17F /* HabitsApi.swift in Sources */,
+				98C630681B19105E00ACA140 /* CreateARewardViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

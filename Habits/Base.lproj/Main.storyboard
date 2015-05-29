@@ -76,8 +76,8 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="name" destination="YSf-bs-gka" id="f1a-36-xpp"/>
-                                            <outlet property="taskState" destination="Qgn-Ns-Zjb" id="w8m-m0-zsx"/>
+                                            <outlet property="name" destination="YSf-bs-gka" id="eLz-Nc-acB"/>
+                                            <outlet property="taskState" destination="Qgn-Ns-Zjb" id="O9z-lw-3ZQ"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -159,6 +159,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="ouc-xF-CS1">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="barTintColor" red="0.13284779390000001" green="0.56254960669999998" blue="0.90588235289999997" alpha="1" colorSpace="calibratedRGB"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -166,6 +167,7 @@
                     </navigationBar>
                     <connections>
                         <segue destination="g6X-UD-ABx" kind="relationship" relationship="rootViewController" id="Vhd-nx-lFK"/>
+                        <segue destination="TJf-Iw-fNJ" kind="show" identifier="createToDoSegue" id="pAw-au-F3q"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WJS-EA-2Rz" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -181,6 +183,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="wtv-fh-QvH">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="barTintColor" red="0.86005963580776945" green="0.79843246074311591" blue="0.46000155011551375" alpha="1" colorSpace="calibratedRGB"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -188,6 +191,7 @@
                     </navigationBar>
                     <connections>
                         <segue destination="76b-fe-Uvf" kind="relationship" relationship="rootViewController" id="ac7-gP-7rW"/>
+                        <segue destination="mxg-Tl-OMF" kind="show" identifier="createRewardSegue" id="VLv-wg-rDL"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4sg-bu-JLl" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -205,14 +209,126 @@
                     <view key="view" contentMode="scaleToFill" id="u1a-En-gs5">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="50" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="EaR-AS-AHK">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="reward_cell" rowHeight="50" id="G9h-lg-Tc3" customClass="RewardCell" customModule="Habits" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="G9h-lg-Tc3" id="sp1-1u-9bA">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Jj-0T-y4H" userLabel="Name">
+                                                    <rect key="frame" x="8" y="0.0" width="178" height="49"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rnA-vX-5NB" customClass="RewardBuyButton" customModule="Habits" customModuleProvider="target">
+                                                    <rect key="frame" x="194" y="10" width="118" height="30"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="30" id="ja7-JI-IdF"/>
+                                                        <constraint firstAttribute="width" constant="118" id="sWo-xD-Mdh"/>
+                                                    </constraints>
+                                                    <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="10" maxY="0.0"/>
+                                                    <state key="normal" title="Buy">
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="rnA-vX-5NB" firstAttribute="leading" secondItem="3Jj-0T-y4H" secondAttribute="trailing" constant="8" id="LRX-jo-lOb"/>
+                                                <constraint firstItem="3Jj-0T-y4H" firstAttribute="top" secondItem="sp1-1u-9bA" secondAttribute="topMargin" constant="-8" id="NHw-XK-d5f"/>
+                                                <constraint firstItem="3Jj-0T-y4H" firstAttribute="leading" secondItem="sp1-1u-9bA" secondAttribute="leadingMargin" id="Qj5-X5-E8R"/>
+                                                <constraint firstItem="rnA-vX-5NB" firstAttribute="trailing" secondItem="sp1-1u-9bA" secondAttribute="trailingMargin" id="VXW-v6-V8R"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="3Jj-0T-y4H" secondAttribute="bottom" constant="-8" id="c0O-nI-L2E"/>
+                                                <constraint firstAttribute="centerY" secondItem="rnA-vX-5NB" secondAttribute="centerY" id="web-El-jMd"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="buyButton" destination="rnA-vX-5NB" id="TDd-9M-691"/>
+                                            <outlet property="name" destination="3Jj-0T-y4H" id="BUn-jN-gWQ"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="EaR-AS-AHK" secondAttribute="trailing" constant="-16" id="5gu-2j-f3v"/>
+                            <constraint firstItem="EaR-AS-AHK" firstAttribute="leading" secondItem="u1a-En-gs5" secondAttribute="leadingMargin" constant="-16" id="X8d-d1-GL1"/>
+                            <constraint firstItem="EaR-AS-AHK" firstAttribute="top" secondItem="u1a-En-gs5" secondAttribute="topMargin" id="eSn-br-Ssz"/>
+                            <constraint firstItem="EaR-AS-AHK" firstAttribute="bottom" secondItem="u1a-En-gs5" secondAttribute="bottomMargin" id="uzo-fp-Upa"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Rewards" id="RgV-AA-eR0"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="rewardsTable" destination="EaR-AS-AHK" id="myw-eL-RyS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mix-Q3-avw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="644" y="2205"/>
+        </scene>
+        <!--Create a reward-->
+        <scene sceneID="4I3-pu-SaN">
+            <objects>
+                <viewController id="mxg-Tl-OMF" customClass="CreateARewardViewController" customModule="Habits" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="mic-30-7p8"/>
+                        <viewControllerLayoutGuide type="bottom" id="HVs-4H-7Zh"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="OEB-oR-oBo">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Create a new reward..." minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5FZ-2h-SJR">
+                                <rect key="frame" x="16" y="269" width="288" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="dJl-pf-Y8l"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Price" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="75Z-bp-LZZ">
+                                <rect key="frame" x="16" y="316" width="288" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="X8X-B1-Ffe"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerY" secondItem="5FZ-2h-SJR" secondAttribute="centerY" id="26z-4L-ox6"/>
+                            <constraint firstItem="5FZ-2h-SJR" firstAttribute="leading" secondItem="OEB-oR-oBo" secondAttribute="leadingMargin" id="NFQ-VX-I3M"/>
+                            <constraint firstItem="75Z-bp-LZZ" firstAttribute="top" secondItem="5FZ-2h-SJR" secondAttribute="bottom" constant="17" id="bKv-EB-5wX"/>
+                            <constraint firstItem="75Z-bp-LZZ" firstAttribute="leading" secondItem="OEB-oR-oBo" secondAttribute="leadingMargin" id="jWy-iH-TnY"/>
+                            <constraint firstItem="75Z-bp-LZZ" firstAttribute="trailing" secondItem="OEB-oR-oBo" secondAttribute="trailingMargin" id="mC2-QE-g7V"/>
+                            <constraint firstItem="5FZ-2h-SJR" firstAttribute="trailing" secondItem="OEB-oR-oBo" secondAttribute="trailingMargin" id="mrT-w0-Mqx"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Create a reward" id="Use-3x-Yjh">
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="oVH-yc-1uK">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="onSaveTap:" destination="mxg-Tl-OMF" id="NFR-Dy-pmN"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="rewardPriceTextField" destination="75Z-bp-LZZ" id="D2W-In-n8G"/>
+                        <outlet property="rewardTextField" destination="5FZ-2h-SJR" id="tU4-eu-8zL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9bC-X3-m4W" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1149" y="2205"/>
         </scene>
         <!--To Dos-->
         <scene sceneID="Zzn-Zl-vhQ">
@@ -225,14 +341,118 @@
                     <view key="view" contentMode="scaleToFill" id="bkv-j3-vTC">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="50" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="qDf-e6-V48">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="to_do_cell" rowHeight="50" id="bqL-Dv-JJA" customClass="ToDoCell" customModule="Habits" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bqL-Dv-JJA" id="CdZ-KA-zvc">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5De-AW-nb1" userLabel="Name">
+                                                    <rect key="frame" x="8" y="0.0" width="247" height="49"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LUJ-iX-lQ2" userLabel="State Change Switch" customClass="ToDoStateChangeSwitch" customModule="Habits" customModuleProvider="target">
+                                                    <rect key="frame" x="263" y="8" width="51" height="31"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="49" id="dQC-WL-uf3"/>
+                                                        <constraint firstAttribute="height" constant="31" id="ycN-Je-c0d"/>
+                                                    </constraints>
+                                                </switch>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="LUJ-iX-lQ2" firstAttribute="trailing" secondItem="CdZ-KA-zvc" secondAttribute="trailingMargin" id="P1e-P9-ggE"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="5De-AW-nb1" secondAttribute="bottom" constant="-8" id="Y3R-zc-gjH"/>
+                                                <constraint firstAttribute="centerY" secondItem="LUJ-iX-lQ2" secondAttribute="centerY" id="gPh-Lw-MgX"/>
+                                                <constraint firstItem="LUJ-iX-lQ2" firstAttribute="leading" secondItem="5De-AW-nb1" secondAttribute="trailing" constant="8" id="jCZ-wn-N9L"/>
+                                                <constraint firstItem="5De-AW-nb1" firstAttribute="top" secondItem="CdZ-KA-zvc" secondAttribute="topMargin" constant="-8" id="jo1-ra-LwT"/>
+                                                <constraint firstItem="5De-AW-nb1" firstAttribute="leading" secondItem="CdZ-KA-zvc" secondAttribute="leadingMargin" id="rzM-VD-mcF"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="name" destination="5De-AW-nb1" id="476-od-J6b"/>
+                                            <outlet property="stateSwitch" destination="LUJ-iX-lQ2" id="QVL-DE-xk0"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="g6X-UD-ABx" id="etS-Nd-ZDM"/>
+                                    <outlet property="delegate" destination="g6X-UD-ABx" id="gUr-vd-UFG"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="qDf-e6-V48" secondAttribute="trailing" constant="-16" id="ME2-SQ-pxU"/>
+                            <constraint firstItem="qDf-e6-V48" firstAttribute="bottom" secondItem="bkv-j3-vTC" secondAttribute="bottomMargin" id="biD-mb-vqN"/>
+                            <constraint firstItem="qDf-e6-V48" firstAttribute="top" secondItem="bkv-j3-vTC" secondAttribute="topMargin" id="mUh-E5-Lgv"/>
+                            <constraint firstItem="qDf-e6-V48" firstAttribute="leading" secondItem="bkv-j3-vTC" secondAttribute="leadingMargin" constant="-16" id="yem-Vi-gsI"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="To Dos" id="OQG-F4-gYw"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="toDosTable" destination="qDf-e6-V48" id="Ryb-6N-cXm"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5sP-A8-heT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="644" y="1496"/>
+        </scene>
+        <!--Create a To Do-->
+        <scene sceneID="MGc-t1-lTK">
+            <objects>
+                <viewController id="TJf-Iw-fNJ" customClass="CreateAToDoViewController" customModule="Habits" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="PZA-cm-fbl"/>
+                        <viewControllerLayoutGuide type="bottom" id="mEF-Gg-aoq"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="JKm-uL-etQ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Create a new todo..." minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="90O-lm-95X">
+                                <rect key="frame" x="17" y="269" width="288" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="hwV-ir-svD"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerY" secondItem="90O-lm-95X" secondAttribute="centerY" id="BkA-G5-ooT"/>
+                            <constraint firstItem="90O-lm-95X" firstAttribute="leading" secondItem="JKm-uL-etQ" secondAttribute="leadingMargin" id="C7X-d7-NbO"/>
+                            <constraint firstItem="90O-lm-95X" firstAttribute="trailing" secondItem="JKm-uL-etQ" secondAttribute="trailingMargin" id="g2w-6G-Xwu"/>
+                        </constraints>
+                    </view>
+                    <toolbarItems>
+                        <barButtonItem title="Item" id="F7g-Dp-qrV"/>
+                    </toolbarItems>
+                    <navigationItem key="navigationItem" title="Create a To Do" id="gGF-yk-Fbm">
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="Ztd-KG-HmU">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="onSaveTap:" destination="TJf-Iw-fNJ" id="cbU-dd-3IX"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="toDoTextField" destination="90O-lm-95X" id="5BH-lE-oXo"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0n8-QJ-rrd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1149" y="1496"/>
         </scene>
         <!--Profile View Controller-->
         <scene sceneID="vjf-xC-hoH">
