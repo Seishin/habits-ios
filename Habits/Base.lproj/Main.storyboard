@@ -14,6 +14,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="zaa-4e-TJb">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="barTintColor" red="0.31127681876555946" green="0.86005963580776945" blue="0.10295833605318391" alpha="1" colorSpace="calibratedRGB"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -22,6 +23,7 @@
                     </navigationBar>
                     <connections>
                         <segue destination="jEm-Rw-TRW" kind="relationship" relationship="rootViewController" id="0ME-hp-TJp"/>
+                        <segue destination="o7y-LT-0YK" kind="show" identifier="createDailyTaskSegue" id="v2f-Mj-NGh"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3H0-Ox-KB1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -39,14 +41,114 @@
                     <view key="view" contentMode="scaleToFill" id="jkC-PW-TyI">
                         <rect key="frame" x="0.0" y="64" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="50" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="FkA-tx-FDx">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="daily_task_cell" rowHeight="50" id="ed3-OB-T1J" customClass="DailyTaskCell" customModule="Habits" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ed3-OB-T1J" id="ukV-jJ-kj5">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YSf-bs-gka" userLabel="Name">
+                                                    <rect key="frame" x="8" y="0.0" width="247" height="49"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Qgn-Ns-Zjb" customClass="StateChangeSwitch" customModule="Habits" customModuleProvider="target">
+                                                    <rect key="frame" x="263" y="4" width="51" height="31"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="49" id="TeY-7z-Xc5"/>
+                                                        <constraint firstAttribute="height" constant="31" id="jnc-en-W7G"/>
+                                                    </constraints>
+                                                </switch>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="YSf-bs-gka" firstAttribute="leading" secondItem="ukV-jJ-kj5" secondAttribute="leadingMargin" id="gNZ-LZ-uN9"/>
+                                                <constraint firstItem="YSf-bs-gka" firstAttribute="top" secondItem="ukV-jJ-kj5" secondAttribute="topMargin" constant="-8" id="ivI-kc-sa7"/>
+                                                <constraint firstItem="Qgn-Ns-Zjb" firstAttribute="trailing" secondItem="ukV-jJ-kj5" secondAttribute="trailingMargin" id="o7J-nP-nKS"/>
+                                                <constraint firstAttribute="centerY" secondItem="Qgn-Ns-Zjb" secondAttribute="centerY" id="oDI-wf-Hze"/>
+                                                <constraint firstItem="Qgn-Ns-Zjb" firstAttribute="leading" secondItem="YSf-bs-gka" secondAttribute="trailing" constant="8" id="slG-8F-cp6"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="YSf-bs-gka" secondAttribute="bottom" constant="-8" id="xYQ-qu-lzy"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="name" destination="YSf-bs-gka" id="f1a-36-xpp"/>
+                                            <outlet property="taskState" destination="Qgn-Ns-Zjb" id="w8m-m0-zsx"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="jEm-Rw-TRW" id="Wlj-3g-h7b"/>
+                                    <outlet property="delegate" destination="jEm-Rw-TRW" id="6yW-CN-0oV"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="FkA-tx-FDx" secondAttribute="trailing" constant="-16" id="6qn-26-Z6A"/>
+                            <constraint firstItem="FkA-tx-FDx" firstAttribute="top" secondItem="jkC-PW-TyI" secondAttribute="topMargin" id="IpN-SK-0MZ"/>
+                            <constraint firstItem="FkA-tx-FDx" firstAttribute="leading" secondItem="jkC-PW-TyI" secondAttribute="leadingMargin" constant="-16" id="dXR-qd-aU5"/>
+                            <constraint firstItem="FkA-tx-FDx" firstAttribute="bottom" secondItem="jkC-PW-TyI" secondAttribute="bottomMargin" id="ggd-vw-uqU"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Daily Tasks" id="89w-ZM-sC5"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="dailyTasksTable" destination="FkA-tx-FDx" id="gA0-BX-NtW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l6F-UW-GKE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="644" y="796"/>
+        </scene>
+        <!--Create a task-->
+        <scene sceneID="V9c-u9-9pa">
+            <objects>
+                <viewController id="o7y-LT-0YK" customClass="CreateADailyTaskViewController" customModule="Habits" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="lmF-RI-xeG"/>
+                        <viewControllerLayoutGuide type="bottom" id="No8-kp-7Yj"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="3Bt-em-duk">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter a daily task..." minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gHk-eK-gcl">
+                                <rect key="frame" x="16" y="269" width="288" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="ZHT-sa-M6n"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="gHk-eK-gcl" firstAttribute="leading" secondItem="3Bt-em-duk" secondAttribute="leadingMargin" id="54x-hC-aKX"/>
+                            <constraint firstItem="gHk-eK-gcl" firstAttribute="trailing" secondItem="3Bt-em-duk" secondAttribute="trailingMargin" id="YyX-zN-dre"/>
+                            <constraint firstAttribute="centerY" secondItem="gHk-eK-gcl" secondAttribute="centerY" id="yMa-x3-jXM"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Create a task" id="JOf-LD-Izn">
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="vOI-yh-XEd">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="onSaveTap:" destination="o7y-LT-0YK" id="b6r-P3-9fD"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="dailyTaskField" destination="gHk-eK-gcl" id="uHT-y5-LyP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="r8u-e8-fEs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1149" y="796"/>
         </scene>
         <!--Item-->
         <scene sceneID="j4p-5R-asz">
@@ -293,7 +395,7 @@
                                     <constraint firstAttribute="height" constant="71" id="aBo-VL-XvW"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="35"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="632-kR-gOR">
@@ -372,7 +474,7 @@
                                     <constraint firstAttribute="height" constant="72" id="KMh-Kd-ahO"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="35"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ovI-89-WgC">

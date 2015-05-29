@@ -74,8 +74,8 @@ class DailyTasksApi {
         }
     }
     
-    func removeDailyTask(user: User, dailyTask: DailyTask) {
-        let url: String = dailyTasksBaseUrl + String(dailyTask.id) + "/?userId=" + String(user.id)
+    func removeDailyTask(user: User, id: String) {
+        let url: String = dailyTasksBaseUrl + id + "/?userId=" + String(user.id)
         
         JSONHTTPClient.JSONFromURLWithString(url, method: "DELETE", params: nil, orBodyData: nil, headers: ["Authorization" : user.token]) { (response: AnyObject!, error: JSONModelError!) -> Void in
             
@@ -88,8 +88,8 @@ class DailyTasksApi {
         }
     }
     
-    func checkDailyTask(user: User, dailyTask: DailyTask) {
-        let url: String = dailyTasksBaseUrl + String(dailyTask.id) + "/check/?userId=" + String(user.id) + "&date=" + dateStr
+    func checkDailyTask(user: User, id: String) {
+        let url: String = dailyTasksBaseUrl + id + "/check/?userId=" + String(user.id) + "&date=" + dateStr
         
         JSONHTTPClient.requestHeaders().setValue(user.token, forKey: "Authorization")
         JSONHTTPClient.postJSONFromURLWithString(url, params: nil) { (response: AnyObject!, error: JSONModelError!) -> Void in
@@ -103,8 +103,8 @@ class DailyTasksApi {
         }
     }
     
-    func uncheckDailyTask(user: User, dailyTask: DailyTask) {
-        let url: String = dailyTasksBaseUrl + String(dailyTask.id) + "/uncheck/?userId=" + String(user.id) + "&date=" + dateStr
+    func uncheckDailyTask(user: User, id: String) {
+        let url: String = dailyTasksBaseUrl + id + "/uncheck/?userId=" + String(user.id) + "&date=" + dateStr
         
         JSONHTTPClient.requestHeaders().setValue(user.token, forKey: "Authorization")
         JSONHTTPClient.postJSONFromURLWithString(url, params: nil) { (response: AnyObject!, error: JSONModelError!) -> Void in
