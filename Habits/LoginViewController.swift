@@ -36,9 +36,13 @@ class LoginViewController: UIViewController {
                 user.password = passwordField.text
                 
                 ApiClient.getUsersApi().loginUser(user)
+            } else {
+                alertView.message = "Invalid email"
+                alertView.show()
             }
         } else {
             alertView.message = "Please enter email and password"
+            alertView.show()
         }
     }
     
