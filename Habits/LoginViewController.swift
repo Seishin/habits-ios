@@ -8,11 +8,14 @@
 
 class LoginViewController: UIViewController {
     
-    @IBOutlet weak var usernameField: UITextField!
+    @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
+    
+    private var alertView: UIAlertView!
     
     override func viewDidLoad() {
         setupNotifications()
+        initAlertView()
     }
     
     func setupNotifications() {
@@ -20,13 +23,22 @@ class LoginViewController: UIViewController {
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "onRegisterSuccess:", name: notifUserCreationSuccess, object: nil)
     }
     
+    func initAlertView() {
+        alertView = UIAlertView()
+        alertView.addButtonWithTitle("Dismiss")
+    }
+    
     @IBAction func onLoginTap(sender: AnyObject) {
-        if !usernameField.text.isEmpty && !passwordField.text.isEmpty {
-            let user: User = User()
-            user.email = usernameField.text
-            user.password = passwordField.text
-            
-            ApiClient.getUsersApi().loginUser(user)
+        if !emailField.text.isEmpty && !passwordField.text.isEmpty {
+            if StringUtils.validateEmail(emailField.text) {
+                let user: User = User()
+                user.email = emailField.text
+                user.password = passwordField.text
+                
+                ApiClient.getUsersApi().loginUser(user)
+            }
+        } else {
+            alertView.message = "Please enter email and password"
         }
     }
     

@@ -797,8 +797,8 @@
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
+                        <outlet property="emailField" destination="Ntq-5b-EU3" id="LT8-1k-qOp"/>
                         <outlet property="passwordField" destination="D4o-gy-kFK" id="DGb-pk-7FN"/>
-                        <outlet property="usernameField" destination="Ntq-5b-EU3" id="fmr-vB-Mzj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3VW-pZ-L3E" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -845,7 +845,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="QY6-x9-gED"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="42O-3T-qo3">
